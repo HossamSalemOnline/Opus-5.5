@@ -1,6 +1,6 @@
 # How to build a 2.5D motion studio with Opus 5.5 (Full Course)
 
-<p align="center"><img src="https://pbs.twimg.com/media/HVqS0I5XsAEvuDf.jpg" width="860" alt="Course cover"></p>
+<p align="center"><img src="../docs/media/e002-cover.jpg" width="860" alt="Course cover"></p>
 
 - **Author:** Dumble ([@Y0urDumble](https://x.com/Y0urDumble))
 - **Published:** Tue 27 Oct 2026, 19:33 UTC (X Article)
@@ -18,8 +18,8 @@ Eight days later it had 27 million views.
 
 A flat cartoon guy with a round head, standing in a throne room that looks like it was lit by a film crew, telling the true story of a jar that warned an empire.
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2115149518282821632/vid/avc1/1080x1920/y05BqJUEVG2PSWrY.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2115149518282821632/img/iQu1t5BzdEJIq-ol.jpg" width="360" alt="The 27M-view bronze jar short, 65 s, 1080x1920"></a><br>
-<sub>▶ The 27M-view bronze jar short, 65 s, 1080x1920 · <a href="https://video.twimg.com/amplify_video/2115149518282821632/vid/avc1/1080x1920/y05BqJUEVG2PSWrY.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v1-bronze-jar-short.mp4"><img src="../docs/media/e002-v1-poster.jpg" width="360" alt="The 27M-view bronze jar short, 65 s, 1080x1920"></a><br>
+<sub>▶ The 27M-view bronze jar short, 65 s, 1080x1920 · <a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v1-bronze-jar-short.mp4">MP4</a></sub></p>
 
 The same channel, Ricks Clips, has more shorts in the same format at 13M, 10M and 10M views.
 
@@ -37,13 +37,13 @@ Here is where all of this starts:
 >
 > It performs at the level of Claude Fable 5.1 for most tasks, and costs 40% less to run than Opus 5.
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2102432417352929280/vid/avc1/1920x1080/yilx3O9YWu7w9vaX.mp4?tag=29"><img src="https://pbs.twimg.com/media/HS1aPgYWMAAP9sw.jpg" width="640" alt="Claude Opus 5.5 launch, 20 s, 1920x1080"></a><br>
-<sub>▶ Claude Opus 5.5 launch, 20 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2102432417352929280/vid/avc1/1920x1080/yilx3O9YWu7w9vaX.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/ref-claude-opus-5.5-launch.mp4"><img src="../docs/media/ref-claude-opus-5.5-launch-poster.jpg" width="640" alt="Claude Opus 5.5 launch, 20 s, 1920x1080"></a><br>
+<sub>▶ Claude Opus 5.5 launch, 20 s, 1920x1080 · <a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/ref-claude-opus-5.5-launch.mp4">MP4</a></sub></p>
 
 ## Part 1 - Why this format works
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2115157446935117824/vid/avc1/1280x720/5X9WcWVfasRvvohO.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2115157446935117824/img/3c1GxgjVZsnxKGZ6.jpg" width="640" alt="Part 1 title card, 4 s"></a><br>
-<sub>▶ Part 1 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157446935117824/vid/avc1/1280x720/5X9WcWVfasRvvohO.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v2-part1.mp4"><img src="../docs/media/e002-v2-poster.jpg" width="640" alt="Part 1 title card, 4 s"></a><br>
+<sub>▶ Part 1 title card, 4 s · <a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v2-part1.mp4">MP4</a></sub></p>
 
 ### 01. Anatomy of a 27M-view short
 
@@ -61,7 +61,7 @@ CAPTIONS      1-2 words at a time, bold white, centre-low
 HOOK          a question in the title: why / how / what really happened
 ```
 
-<p align="center"><img src="https://pbs.twimg.com/media/HVqP9vpWoAASYpr.jpg" width="860" alt="Anatomy of the short"></p>
+<p align="center"><img src="../docs/media/e002-img1-anatomy.jpg" width="860" alt="Anatomy of the short"></p>
 
 The story, by the way, is real. It's Zhang Heng's seismoscope from 132 AD: a bronze jar with eight dragons holding balls over eight frogs. When the ground shook, a ball dropped into a frog's mouth and showed the direction of the quake. [Zhang Heng, Wikipedia](https://en.wikipedia.org/wiki/Zhang_Heng)
 
@@ -135,7 +135,7 @@ pip install -U openai-whisper
 
 Then open Claude Code on Opus 5.5. Use xhigh effort for a new episode and medium for fixes and re-renders. [MCP for Blender README](https://github.com/ahujasid/mcp-for-blender) · [Remotion AI skills](https://www.remotion.dev/docs/ai/skills)
 
-<p align="center"><img src="https://pbs.twimg.com/media/HVqQTumX0AAqN6Q.jpg" width="860" alt="Studio setup"></p>
+<p align="center"><img src="../docs/media/e002-img2-studio-setup.jpg" width="860" alt="Studio setup"></p>
 
 ### 04. Write the house rules once
 
@@ -171,14 +171,14 @@ Claude Code reads CLAUDE.md on every run. Put the format in it, so every episode
 
 ## Part 3 - Story first
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2115157667047956481/vid/avc1/1280x720/NmUGiq51gkw0WLjq.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2115157667047956481/img/dU2jZZlWUgGOY4OJ.jpg" width="640" alt="Part 3 title card, 4 s"></a><br>
-<sub>▶ Part 3 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157667047956481/vid/avc1/1280x720/NmUGiq51gkw0WLjq.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v3-part3.mp4"><img src="../docs/media/e002-v3-poster.jpg" width="640" alt="Part 3 title card, 4 s"></a><br>
+<sub>▶ Part 3 title card, 4 s · <a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v3-part3.mp4">MP4</a></sub></p>
 
 ### 05. The script is 160 words
 
 A 65-second short read at a normal pace is about 150-170 words. That is the whole budget. Opus is very good at this if you force it to show its sources:
 
-<p align="center"><img src="https://pbs.twimg.com/media/HVqQf3zW8AAmd78.jpg" width="860" alt="Script"></p>
+<p align="center"><img src="../docs/media/e002-img3-script.jpg" width="860" alt="Script"></p>
 
 ```
 Find 5 true stories from history or science that fit this title pattern:
@@ -235,8 +235,8 @@ Now every revision is a number. "Move the hit to 1260" is an edit an agent can't
 
 ## Part 4 - Build the world in Blender
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2115157777257574400/vid/avc1/1278x720/7Web--w6XpX-1grF.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2115157777257574400/img/82DrdaJOElyNugCv.jpg" width="640" alt="Part 4 title card, 4 s"></a><br>
-<sub>▶ Part 4 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157777257574400/vid/avc1/1278x720/7Web--w6XpX-1grF.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v4-part4.mp4"><img src="../docs/media/e002-v4-poster.jpg" width="640" alt="Part 4 title card, 4 s"></a><br>
+<sub>▶ Part 4 title card, 4 s · <a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v4-part4.mp4">MP4</a></sub></p>
 
 ### 07. Sets through MCP: block, light, then dress
 
@@ -252,12 +252,12 @@ Anthropic's own Alex Albert showed how far this already goes on launch day:
 >
 > I just realized Opus 5.5 can use Blender to make claymations with just a single prompt in claude dot ai now
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2102457816820916224/vid/avc1/1612x1080/pdOJXL6ne_LOROg3.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2102457816820916224/img/UNnuG_dYWVbvKNZu.jpg" width="640" alt="Blender claymation from one prompt, 22 s"></a><br>
-<sub>▶ Blender claymation from one prompt, 22 s · <a href="https://video.twimg.com/amplify_video/2102457816820916224/vid/avc1/1612x1080/pdOJXL6ne_LOROg3.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/ref-alexalbert-blender-claymation.mp4"><img src="../docs/media/ref-alexalbert-blender-claymation-poster.jpg" width="640" alt="Blender claymation from one prompt, 22 s"></a><br>
+<sub>▶ Blender claymation from one prompt, 22 s · <a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/ref-alexalbert-blender-claymation.mp4">MP4</a></sub></p>
 
 Build each set in passes, and stop after each one:
 
-<p align="center"><img src="https://pbs.twimg.com/media/HVqQrXwXQAAwKkw.jpg" width="860" alt="Set passes"></p>
+<p align="center"><img src="../docs/media/e002-img4-set-passes.jpg" width="860" alt="Set passes"></p>
 
 ```
 You are building SET 2 (the throne room) for a vertical 2.5D short, in Blender through MCP.
@@ -288,8 +288,8 @@ Render a 6-angle look sheet on a neutral floor. Then place it in SET 2 at the ma
 
 ## Part 5 - Put 2D characters in 3D
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2115157888607846400/vid/avc1/1280x720/p4wUbnmXZctR6rBA.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2115157888607846400/img/alUfvNO6dKSYCP4F.jpg" width="640" alt="Part 5 title card, 4 s"></a><br>
-<sub>▶ Part 5 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157888607846400/vid/avc1/1280x720/p4wUbnmXZctR6rBA.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v5-part5.mp4"><img src="../docs/media/e002-v5-poster.jpg" width="640" alt="Part 5 title card, 4 s"></a><br>
+<sub>▶ Part 5 title card, 4 s · <a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v5-part5.mp4">MP4</a></sub></p>
 
 ### 09. The cut-out ri
 
@@ -297,7 +297,7 @@ This is the core of the 2.5D look. The characters are flat images on planes, sta
 
 Blender does this natively: Import Images as Planes with the Emit or Shadeless shader, so the set lights never shade them, plus a soft contact shadow under the feet so they sit on the floor instead of floating. [Blender manual: Images as Planes](https://docs.blender.org/manual/en/latest/modeling/meshes/import_images_as_planes.html)
 
-<p align="center"><img src="https://pbs.twimg.com/media/HVqRUHlXEAAijqn.jpg" width="860" alt="Cut-out rig"></p>
+<p align="center"><img src="../docs/media/e002-img5-cutout-rig.jpg" width="860" alt="Cut-out rig"></p>
 
 Faces work like old-school replacement animation: a set of eyes and mouths that swap per beat. Have Opus draw them as SVG first
 
@@ -334,8 +334,8 @@ For a hand-painted variant of the same idea, JohnHeibel's ClaudeAnimationBase (p
 
 ## Part 6 - Voice, captions, sound
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2115157994392494080/vid/avc1/1280x720/5hGbR5FwhvzHzMDW.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2115157994392494080/img/XFc5H0YOS-uVTmyM.jpg" width="640" alt="Part 6 title card, 4 s"></a><br>
-<sub>▶ Part 6 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157994392494080/vid/avc1/1280x720/5hGbR5FwhvzHzMDW.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v6-part6.mp4"><img src="../docs/media/e002-v6-poster.jpg" width="640" alt="Part 6 title card, 4 s"></a><br>
+<sub>▶ Part 6 title card, 4 s · <a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v6-part6.mp4">MP4</a></sub></p>
 
 ### 11. Your voice, word-timed captions
 
@@ -343,7 +343,7 @@ Record the script yourself. A real voice with real breaths is the single biggest
 
 Then let Whisper give you a timestamp for every word, and build the caption layer from that file. [Whisper README](https://github.com/openai/whisper)
 
-<p align="center"><img src="https://pbs.twimg.com/media/HVqReagW0AAgk5j.png" width="860" alt="Word-timed captions"></p>
+<p align="center"><img src="../docs/media/e002-img6-captions.png" width="860" alt="Word-timed captions"></p>
 
 ```
 whisper voice.wav --model small --word_timestamps True --output_format json --output_dir captions/
@@ -384,8 +384,8 @@ A soft lead-in on a sound file shifts its audible hit. Find the hit on the wavef
 
 ## Part 7 - The review loop
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2115158357212352512/vid/avc1/1280x720/Zfc564KE3yOrbHyu.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2115158357212352512/img/esrpi3M9rY9wkCkH.jpg" width="640" alt="Part 7 title card, 4 s"></a><br>
-<sub>▶ Part 7 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115158357212352512/vid/avc1/1280x720/Zfc564KE3yOrbHyu.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v7-part7.mp4"><img src="../docs/media/e002-v7-poster.jpg" width="640" alt="Part 7 title card, 4 s"></a><br>
+<sub>▶ Part 7 title card, 4 s · <a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e002-v7-part7.mp4">MP4</a></sub></p>
 
 ### 13. Make the frames come to you
 
@@ -399,7 +399,7 @@ ffmpeg -i out/episode.mp4 -vf "fps=1,scale=240:-1,tile=8x9" -frames:v 1 review/c
 ffmpeg -i out/episode.mp4 -vf "fps=1/3,scale=360:-1,tile=6x4" -frames:v 1 review/phone.png
 ```
 
-<p align="center"><img src="https://pbs.twimg.com/media/HVqRte2XwAA4GTj.jpg" width="860" alt="Contact sheet"></p>
+<p align="center"><img src="../docs/media/e002-img7-contact-sheet.jpg" width="860" alt="Contact sheet"></p>
 
 [FFmpeg filters docs](https://ffmpeg.org/ffmpeg-filters.html)
 
@@ -442,7 +442,7 @@ Render stills at 1254, 1258, 1262, 1266 and a preview of 1215-1290.
 Check the in-between frames for jumps. Report what changed and the output files.
 ```
 
-<p align="center"><img src="https://pbs.twimg.com/media/HVqSFEPXQAA1Yqq.jpg" width="860" alt="Scoped revision"></p>
+<p align="center"><img src="../docs/media/e002-img8-revision.jpg" width="860" alt="Scoped revision"></p>
 
 Fix in this order: anything wrong or missing first, then readability, then timing, then visual detail.
 

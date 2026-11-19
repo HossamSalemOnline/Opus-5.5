@@ -75,7 +75,7 @@ figcaption a{font-weight:600}
 </style></head><body>
 <nav class="nav"><div class="in"><a class="brand" href="index.html">Opus <b>5.5</b> Knowledge Hub</a><span class="sp"></span><a class="l" href="index.html">Home</a><a class="l" href="e001.html">Post · Claude Opus 5.5 + 13 free Gi…</a><a class="l on" href="e002.html">Article · How to build a 2.5D motion s…</a><a class="l" href="repos.html">All repos</a><a class="l" href="sources.html">Sources</a></div></nav>
 <div class="layout"><article class="doc"><h1 id="how-to-build-a-25d-motion-studio-with-opus-55-full-course">How to build a 2.5D motion studio with Opus 5.5 (Full Course)</h1>
-<figure><img src="https://pbs.twimg.com/media/HVqS0I5XsAEvuDf.jpg" alt="Course cover"></figure>
+<figure><img src="media/e002-cover.jpg" alt="Course cover"></figure>
 
 <ul>
 <li><strong>Author:</strong> Dumble (<a href="https://x.com/Y0urDumble">@Y0urDumble</a>)</li>
@@ -90,7 +90,7 @@ figcaption a{font-weight:600}
 <p>A 65-second cartoon about a bronze jar went up on YouTube on October 19.</p>
 <p>Eight days later it had 27 million views.</p>
 <p>A flat cartoon guy with a round head, standing in a throne room that looks like it was lit by a film crew, telling the true story of a jar that warned an empire.</p>
-<figure class="video tall"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115149518282821632/img/iQu1t5BzdEJIq-ol.jpg"><source src="https://video.twimg.com/amplify_video/2115149518282821632/vid/avc1/1080x1920/y05BqJUEVG2PSWrY.mp4?tag=29" type="video/mp4"></video><figcaption>The 27M-view bronze jar short, 65 s, 1080x1920 · <a href="https://video.twimg.com/amplify_video/2115149518282821632/vid/avc1/1080x1920/y05BqJUEVG2PSWrY.mp4?tag=29">MP4</a></figcaption></figure>
+<figure class="video tall"><video controls playsinline preload="none" poster="media/e002-v1-poster.jpg"><source src="media/e002-v1-bronze-jar-short.mp4" type="video/mp4"></video><figcaption>The 27M-view bronze jar short, 65 s, 1080x1920 · <a href="media/e002-v1-bronze-jar-short.mp4">MP4</a></figcaption></figure>
 
 <p>The same channel, Ricks Clips, has more shorts in the same format at 13M, 10M and 10M views.</p>
 <p>I went through that video frame by frame. The format is not magic, and almost every part of it can now be built with Opus 5.5, Blender and a handful of open-source skills.</p>
@@ -104,10 +104,10 @@ figcaption a{font-weight:600}
 <p>Introducing Claude Opus 5.5, the first model in our new Claude 5.5 family.</p>
 <p>It performs at the level of Claude Fable 5.1 for most tasks, and costs 40% less to run than Opus 5.</p>
 </blockquote>
-<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/media/HS1aPgYWMAAP9sw.jpg"><source src="https://video.twimg.com/amplify_video/2102432417352929280/vid/avc1/1920x1080/yilx3O9YWu7w9vaX.mp4?tag=29" type="video/mp4"></video><figcaption>Claude Opus 5.5 launch, 20 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2102432417352929280/vid/avc1/1920x1080/yilx3O9YWu7w9vaX.mp4?tag=29">MP4</a></figcaption></figure>
+<figure class="video"><video controls playsinline preload="none" poster="media/ref-claude-opus-5.5-launch-poster.jpg"><source src="media/ref-claude-opus-5.5-launch.mp4" type="video/mp4"></video><figcaption>Claude Opus 5.5 launch, 20 s, 1920x1080 · <a href="media/ref-claude-opus-5.5-launch.mp4">MP4</a></figcaption></figure>
 
 <h2 id="part-1-why-this-format-works">Part 1 - Why this format works</h2>
-<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115157446935117824/img/3c1GxgjVZsnxKGZ6.jpg"><source src="https://video.twimg.com/amplify_video/2115157446935117824/vid/avc1/1280x720/5X9WcWVfasRvvohO.mp4?tag=29" type="video/mp4"></video><figcaption>Part 1 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157446935117824/vid/avc1/1280x720/5X9WcWVfasRvvohO.mp4?tag=29">MP4</a></figcaption></figure>
+<figure class="video"><video controls playsinline preload="none" poster="media/e002-v2-poster.jpg"><source src="media/e002-v2-part1.mp4" type="video/mp4"></video><figcaption>Part 1 title card, 4 s · <a href="media/e002-v2-part1.mp4">MP4</a></figcaption></figure>
 
 <h3 id="01-anatomy-of-a-27m-view-short">01. Anatomy of a 27M-view short</h3>
 <p>I cut the jar video into one frame per second and laid all 65 on a sheet. This is what is actually on screen:</p>
@@ -121,7 +121,7 @@ CAMERA        slow push-ins and dolly moves, never random drift
 CAPTIONS      1-2 words at a time, bold white, centre-low
 HOOK          a question in the title: why / how / what really happened
 </code></pre>
-<figure><img src="https://pbs.twimg.com/media/HVqP9vpWoAASYpr.jpg" alt="Anatomy of the short"></figure>
+<figure><img src="media/e002-img1-anatomy.jpg" alt="Anatomy of the short"></figure>
 
 <p>The story, by the way, is real. It's Zhang Heng's seismoscope from 132 AD: a bronze jar with eight dragons holding balls over eight frogs. When the ground shook, a ball dropped into a frog's mouth and showed the direction of the quake. <a href="https://en.wikipedia.org/wiki/Zhang_Heng">Zhang Heng, Wikipedia</a></p>
 <p>That is the first lesson. The viewer gets a fact they can repeat at dinner. The animation is the delivery, not the point.</p>
@@ -176,7 +176,7 @@ npx skills add remotion-dev/skills
 pip install -U openai-whisper
 </code></pre>
 <p>Then open Claude Code on Opus 5.5. Use xhigh effort for a new episode and medium for fixes and re-renders. <a href="https://github.com/ahujasid/mcp-for-blender">MCP for Blender README</a> · <a href="https://www.remotion.dev/docs/ai/skills">Remotion AI skills</a></p>
-<figure><img src="https://pbs.twimg.com/media/HVqQTumX0AAqN6Q.jpg" alt="Studio setup"></figure>
+<figure><img src="media/e002-img2-studio-setup.jpg" alt="Studio setup"></figure>
 
 <h3 id="04-write-the-house-rules-once">04. Write the house rules once</h3>
 <p>Claude Code reads CLAUDE.md on every run. Put the format in it, so every episode starts from the same rules. <a href="https://code.claude.com/docs/en/memory">Claude Code memory docs</a></p>
@@ -207,11 +207,11 @@ pip install -U openai-whisper
 2. List every problem with a timestamp. Fix the 3 worst. Repeat.
 </code></pre>
 <h2 id="part-3-story-first">Part 3 - Story first</h2>
-<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115157667047956481/img/dU2jZZlWUgGOY4OJ.jpg"><source src="https://video.twimg.com/amplify_video/2115157667047956481/vid/avc1/1280x720/NmUGiq51gkw0WLjq.mp4?tag=29" type="video/mp4"></video><figcaption>Part 3 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157667047956481/vid/avc1/1280x720/NmUGiq51gkw0WLjq.mp4?tag=29">MP4</a></figcaption></figure>
+<figure class="video"><video controls playsinline preload="none" poster="media/e002-v3-poster.jpg"><source src="media/e002-v3-part3.mp4" type="video/mp4"></video><figcaption>Part 3 title card, 4 s · <a href="media/e002-v3-part3.mp4">MP4</a></figcaption></figure>
 
 <h3 id="05-the-script-is-160-words">05. The script is 160 words</h3>
 <p>A 65-second short read at a normal pace is about 150-170 words. That is the whole budget. Opus is very good at this if you force it to show its sources:</p>
-<figure><img src="https://pbs.twimg.com/media/HVqQf3zW8AAmd78.jpg" alt="Script"></figure>
+<figure><img src="media/e002-img3-script.jpg" alt="Script"></figure>
 
 <pre><code>Find 5 true stories from history or science that fit this title pattern:
 &quot;The [object] That [did something surprising]&quot; or &quot;Why [thing] Always [does X]&quot;.
@@ -255,7 +255,7 @@ Reuse sets. A 65s episode should need 3-5 sets, not 30.
 <p>Physics keeps you honest here. A ball falling about 30 cm takes roughly a quarter of a second, so 7-8 frames at 30 fps. Make it slower and it reads as floaty, which viewers feel even when they can't name it.</p>
 <p>Now every revision is a number. "Move the hit to 1260" is an edit an agent can't misread.</p>
 <h2 id="part-4-build-the-world-in-blender">Part 4 - Build the world in Blender</h2>
-<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115157777257574400/img/82DrdaJOElyNugCv.jpg"><source src="https://video.twimg.com/amplify_video/2115157777257574400/vid/avc1/1278x720/7Web--w6XpX-1grF.mp4?tag=29" type="video/mp4"></video><figcaption>Part 4 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157777257574400/vid/avc1/1278x720/7Web--w6XpX-1grF.mp4?tag=29">MP4</a></figcaption></figure>
+<figure class="video"><video controls playsinline preload="none" poster="media/e002-v4-poster.jpg"><source src="media/e002-v4-part4.mp4" type="video/mp4"></video><figcaption>Part 4 title card, 4 s · <a href="media/e002-v4-part4.mp4">MP4</a></figcaption></figure>
 
 <h3 id="07-sets-through-mcp-block-light-then-dress">07. Sets through MCP: block, light, then dress</h3>
 <p>MCP for Blender runs a small server inside Blender. Claude writes Blender Python itself, and the MCP adds what Python cannot do alone: <strong>look</strong> shows it the viewport, the camera, a multi-angle sheet or an animation strip, and <strong>search_assets</strong> pulls real Poly Haven HDRIs and textures.</p>
@@ -266,10 +266,10 @@ Reuse sets. A 65s episode should need 3-5 sets, not 30.
 <p><strong>[Embedded post]</strong> <a href="https://x.com/alexalbert__/status/2102458348511879448">@alexalbert__</a> · Tue 22 Sep 2026 · 272,346 views · 2,652 likes</p>
 <p>I just realized Opus 5.5 can use Blender to make claymations with just a single prompt in claude dot ai now</p>
 </blockquote>
-<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2102457816820916224/img/UNnuG_dYWVbvKNZu.jpg"><source src="https://video.twimg.com/amplify_video/2102457816820916224/vid/avc1/1612x1080/pdOJXL6ne_LOROg3.mp4?tag=29" type="video/mp4"></video><figcaption>Blender claymation from one prompt, 22 s · <a href="https://video.twimg.com/amplify_video/2102457816820916224/vid/avc1/1612x1080/pdOJXL6ne_LOROg3.mp4?tag=29">MP4</a></figcaption></figure>
+<figure class="video"><video controls playsinline preload="none" poster="media/ref-alexalbert-blender-claymation-poster.jpg"><source src="media/ref-alexalbert-blender-claymation.mp4" type="video/mp4"></video><figcaption>Blender claymation from one prompt, 22 s · <a href="media/ref-alexalbert-blender-claymation.mp4">MP4</a></figcaption></figure>
 
 <p>Build each set in passes, and stop after each one:</p>
-<figure><img src="https://pbs.twimg.com/media/HVqQrXwXQAAwKkw.jpg" alt="Set passes"></figure>
+<figure><img src="media/e002-img4-set-passes.jpg" alt="Set passes"></figure>
 
 <pre><code>You are building SET 2 (the throne room) for a vertical 2.5D short, in Blender through MCP.
 
@@ -292,12 +292,12 @@ Real-world scale. Bevel every edge. Material with wear in the crevices.
 Render a 6-angle look sheet on a neutral floor. Then place it in SET 2 at the mark.
 </code></pre>
 <h2 id="part-5-put-2d-characters-in-3d">Part 5 - Put 2D characters in 3D</h2>
-<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115157888607846400/img/alUfvNO6dKSYCP4F.jpg"><source src="https://video.twimg.com/amplify_video/2115157888607846400/vid/avc1/1280x720/p4wUbnmXZctR6rBA.mp4?tag=29" type="video/mp4"></video><figcaption>Part 5 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157888607846400/vid/avc1/1280x720/p4wUbnmXZctR6rBA.mp4?tag=29">MP4</a></figcaption></figure>
+<figure class="video"><video controls playsinline preload="none" poster="media/e002-v5-poster.jpg"><source src="media/e002-v5-part5.mp4" type="video/mp4"></video><figcaption>Part 5 title card, 4 s · <a href="media/e002-v5-part5.mp4">MP4</a></figcaption></figure>
 
 <h3 id="09-the-cut-out-ri">09. The cut-out ri</h3>
 <p>This is the core of the 2.5D look. The characters are flat images on planes, standing inside the 3D set.</p>
 <p>Blender does this natively: Import Images as Planes with the Emit or Shadeless shader, so the set lights never shade them, plus a soft contact shadow under the feet so they sit on the floor instead of floating. <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/import_images_as_planes.html">Blender manual: Images as Planes</a></p>
-<figure><img src="https://pbs.twimg.com/media/HVqRUHlXEAAijqn.jpg" alt="Cut-out rig"></figure>
+<figure><img src="media/e002-img5-cutout-rig.jpg" alt="Cut-out rig"></figure>
 
 <p>Faces work like old-school replacement animation: a set of eyes and mouths that swap per beat. Have Opus draw them as SVG first</p>
 <pre><code>Design a cartoon character as separate SVG parts on transparent backgrounds:
@@ -325,12 +325,12 @@ Rules: no idle bounce. Every move starts with a look. Swap mouths only on stress
 </code></pre>
 <p>For a hand-painted variant of the same idea, JohnHeibel's ClaudeAnimationBase (p5.js + p5.brush, 31 acted emotions) and the painted-animation skill from opus-video-skills are worth reading line by line.</p>
 <h2 id="part-6-voice-captions-sound">Part 6 - Voice, captions, sound</h2>
-<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115157994392494080/img/XFc5H0YOS-uVTmyM.jpg"><source src="https://video.twimg.com/amplify_video/2115157994392494080/vid/avc1/1280x720/5hGbR5FwhvzHzMDW.mp4?tag=29" type="video/mp4"></video><figcaption>Part 6 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157994392494080/vid/avc1/1280x720/5hGbR5FwhvzHzMDW.mp4?tag=29">MP4</a></figcaption></figure>
+<figure class="video"><video controls playsinline preload="none" poster="media/e002-v6-poster.jpg"><source src="media/e002-v6-part6.mp4" type="video/mp4"></video><figcaption>Part 6 title card, 4 s · <a href="media/e002-v6-part6.mp4">MP4</a></figcaption></figure>
 
 <h3 id="11-your-voice-word-timed-captions">11. Your voice, word-timed captions</h3>
 <p>Record the script yourself. A real voice with real breaths is the single biggest trust signal in the format, and it keeps you clear of any voice-clone questions.</p>
 <p>Then let Whisper give you a timestamp for every word, and build the caption layer from that file. <a href="https://github.com/openai/whisper">Whisper README</a></p>
-<figure><img src="https://pbs.twimg.com/media/HVqReagW0AAgk5j.png" alt="Word-timed captions"></figure>
+<figure><img src="media/e002-img6-captions.png" alt="Word-timed captions"></figure>
 
 <pre><code>whisper voice.wav --model small --word_timestamps True --output_format json --output_dir captions/
 </code></pre>
@@ -357,7 +357,7 @@ FINAL LINE     frame 1920    music resolves
 </code></pre>
 <p>A soft lead-in on a sound file shifts its audible hit. Find the hit on the waveform and offset the clip so the peak lands on the frame.</p>
 <h2 id="part-7-the-review-loop">Part 7 - The review loop</h2>
-<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115158357212352512/img/esrpi3M9rY9wkCkH.jpg"><source src="https://video.twimg.com/amplify_video/2115158357212352512/vid/avc1/1280x720/Zfc564KE3yOrbHyu.mp4?tag=29" type="video/mp4"></video><figcaption>Part 7 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115158357212352512/vid/avc1/1280x720/Zfc564KE3yOrbHyu.mp4?tag=29">MP4</a></figcaption></figure>
+<figure class="video"><video controls playsinline preload="none" poster="media/e002-v7-poster.jpg"><source src="media/e002-v7-part7.mp4" type="video/mp4"></video><figcaption>Part 7 title card, 4 s · <a href="media/e002-v7-part7.mp4">MP4</a></figcaption></figure>
 
 <h3 id="13-make-the-frames-come-to-you">13. Make the frames come to you</h3>
 <p>Never watch a full export ten times. Look at sheets:</p>
@@ -367,7 +367,7 @@ ffmpeg -i out/episode.mp4 -vf &quot;fps=1,scale=240:-1,tile=8x9&quot; -frames:v 
 # Phone test: how it reads at 360 px wide
 ffmpeg -i out/episode.mp4 -vf &quot;fps=1/3,scale=360:-1,tile=6x4&quot; -frames:v 1 review/phone.png
 </code></pre>
-<figure><img src="https://pbs.twimg.com/media/HVqRte2XwAA4GTj.jpg" alt="Contact sheet"></figure>
+<figure><img src="media/e002-img7-contact-sheet.jpg" alt="Contact sheet"></figure>
 
 <p><a href="https://ffmpeg.org/ffmpeg-filters.html">FFmpeg filters docs</a></p>
 <p>When you fix something, never re-render the whole episode. Blender renders a single frame or a range from the command line:</p>
@@ -399,7 +399,7 @@ KEEP       camera push-in, the cut at 1266, the caption timing, every other shot
 Render stills at 1254, 1258, 1262, 1266 and a preview of 1215-1290.
 Check the in-between frames for jumps. Report what changed and the output files.
 </code></pre>
-<figure><img src="https://pbs.twimg.com/media/HVqSFEPXQAA1Yqq.jpg" alt="Scoped revision"></figure>
+<figure><img src="media/e002-img8-revision.jpg" alt="Scoped revision"></figure>
 
 <p>Fix in this order: anything wrong or missing first, then readability, then timing, then visual detail.</p>
 <p>When the episode is approved, check the export before you upload it:</p>

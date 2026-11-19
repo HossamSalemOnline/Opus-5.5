@@ -9,8 +9,8 @@
 
 ## Attached video
 
-<p align="center"><a href="https://video.twimg.com/amplify_video/2123129525605179392/vid/avc1/1440x1800/KNdLS1eQm-9fwa1r.mp4?tag=29"><img src="https://pbs.twimg.com/amplify_video_thumb/2123129525605179392/img/ctXCc1OJ-XqPXBNa.jpg" width="560" alt="Video, 20 s, 1440x1800 (4:5)"></a><br>
-<sub>▶ Video, 20 s, 1440x1800 (4:5) · <a href="https://video.twimg.com/amplify_video/2123129525605179392/vid/avc1/1440x1800/KNdLS1eQm-9fwa1r.mp4?tag=29">MP4</a></sub></p>
+<p align="center"><a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e001-editing-desk.mp4"><img src="../docs/media/e001-editing-desk-poster.jpg" width="560" alt="Video, 20 s, 1440x1800 (4:5)"></a><br>
+<sub>▶ Video, 20 s, 1440x1800 (4:5) · <a href="https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/docs/media/e001-editing-desk.mp4">MP4</a></sub></p>
 
 ## Full post text (verbatim, links expanded)
 
