@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude Opus 5.5 + 13 free GitHub repos = your own editing desk</title><meta name="robots" content="noindex"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#0d0c0b;--panel:#171513;--panel2:#1f1c19;--line:#2f2a25;--ink:#f4efe6;--muted:#ada393;
+--accent:#d97757;--accent2:#e8a87c;--mustard:#e8a87c;--cream:#f0e6d6;--radius:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#3a2016 0%,transparent 60%),var(--bg);
+color:var(--ink);font:17px/1.7 Inter,system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--mustard);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(14,10,9,.78);border-bottom:1px solid var(--line)}
+.nav .in{max-width:1180px;margin:auto;display:flex;align-items:center;gap:22px;padding:14px 22px;flex-wrap:wrap}
+.brand{font-family:'Bricolage Grotesque',Inter,sans-serif;font-weight:800;font-size:19px;color:var(--ink)}
+.brand b{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav a.l{color:var(--muted);font-size:15px;font-weight:500}.nav a.l.on,.nav a.l:hover{color:var(--ink);text-decoration:none}
+.nav .sp{flex:1}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',Inter,sans-serif;line-height:1.15;letter-spacing:-.015em}
+h1{font-size:clamp(34px,5vw,56px);margin:.2em 0 .4em}
+h2{font-size:30px;margin:2.2em 0 .6em;padding-top:.4em}
+h3{font-size:22px;margin:1.8em 0 .5em;color:var(--cream)}h4{font-size:18px;margin:1.6em 0 .4em;color:var(--mustard)}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:56px;max-width:1180px;margin:auto;padding:40px 22px 100px}
+.doc{max-width:780px;min-width:0}
+.toc{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 110px);overflow:auto;font-size:14px;border-left:1px solid var(--line);padding-left:18px}
+.toc b{display:block;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.toc a{display:block;color:var(--muted);padding:4px 0;line-height:1.35}.toc a:hover{color:var(--ink);text-decoration:none}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.toc{display:none}}
+p,li,td{color:#eadcc6;overflow-wrap:anywhere}strong{color:var(--ink)}
+hr{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:48px 0}
+blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 12px 12px 0;color:var(--muted)}
+blockquote p{margin:.3em 0;color:#e2d3bd}
+code{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:.88em;background:var(--panel2);border:1px solid var(--line);padding:.1em .4em;border-radius:6px}
+pre{position:relative;background:#120d0c;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;overflow:auto;line-height:1.55}
+pre code{background:none;border:0;padding:0;font-size:13.5px;color:#f1e2cb;white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:10px;right:10px;font:600 12px Inter,sans-serif;color:var(--ink);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer;opacity:.85}
+.copy:hover{opacity:1;border-color:var(--accent)}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:22px 0;font-size:15px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:block;overflow-x:auto}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--panel2);color:var(--cream);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}tbody tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+img{max-width:100%;border-radius:12px}
+figure{margin:30px 0}figure img{display:block;margin:auto;border:1px solid var(--line)}
+figure.video video{display:block;width:100%;border-radius:var(--radius);border:1px solid var(--line);background:#000;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+figure.video.tall video{max-height:78vh;width:auto;max-width:100%;margin:auto}
+figcaption{text-align:center;font-size:14px;color:var(--muted);margin-top:10px}
+figcaption a{font-weight:600}
+.hero{position:relative;border-radius:28px;overflow:hidden;margin:36px 0 18px;border:1px solid var(--line)}
+.hero img{display:block;width:100%;border-radius:0}
+.hero-copy{padding:40px 0 10px;max-width:820px}
+.hero-copy p.lead{font-size:20px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:30px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.stat b{display:block;font:800 30px 'Bricolage Grotesque',Inter,sans-serif;color:var(--ink)}
+.stat span{color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:26px 0 10px}
+.card{display:block;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:26px;color:var(--ink);transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);text-decoration:none}
+.card .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.card h3{margin:.4em 0 .3em;color:var(--ink)}.card p{color:var(--muted);margin:0;font-size:15px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:22px}
+.gallery .g{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.gallery video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+.gallery .g.tall video{aspect-ratio:4/5}
+.gallery .t{padding:12px 14px}.gallery .t b{display:block}.gallery .t span{font-size:13.5px;color:var(--muted)}
+.foot{border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;text-align:center;padding:30px 22px 50px}
+.pill{display:inline-block;font-size:12.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+
+.entry{display:grid;grid-template-columns:220px 1fr;gap:22px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:18px;color:var(--ink);margin-bottom:18px;transition:.2s}
+.entry:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px)}
+.entry img{width:100%;height:150px;object-fit:cover;border-radius:14px}
+.entry .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.entry h3{margin:.3em 0 .4em;color:var(--ink)}.entry p{color:var(--muted);margin:.2em 0 .6em;font-size:15px}
+@media(max-width:700px){.entry{grid-template-columns:1fr}.entry img{height:180px}}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+.hero-grad{border-radius:28px;border:1px solid var(--line);padding:56px 40px;margin:36px 0 10px;background:radial-gradient(600px 300px at 85% 20%,rgba(217,119,87,.35),transparent 70%),linear-gradient(180deg,var(--panel2),var(--panel))}
+</style></head><body>
+<nav class="nav"><div class="in"><a class="brand" href="index.html">Opus <b>5.5</b> Knowledge Hub</a><span class="sp"></span><a class="l" href="index.html">Home</a><a class="l on" href="e001.html">Post · Claude Opus 5.5 + 13 free Gi…</a><a class="l" href="e002.html">Article · How to build a 2.5D motion s…</a><a class="l" href="repos.html">All repos</a><a class="l" href="sources.html">Sources</a></div></nav>
+<div class="layout"><article class="doc"><h1 id="claude-opus-55-13-free-github-repos-your-own-editing-desk">Claude Opus 5.5 + 13 free GitHub repos = your own editing desk</h1>
+<ul>
+<li><strong>Author:</strong> Dumble (<a href="https://x.com/Y0urDumble">@Y0urDumble</a>)</li>
+<li><strong>Posted:</strong> Wed 18 Nov 2026, 19:05 UTC</li>
+<li><strong>Source:</strong> <a href="https://x.com/Y0urDumble/status/2123130575230042601">https://x.com/Y0urDumble/status/2123130575230042601</a></li>
+<li><strong>Quotes:</strong> the course <a href="e002.html">How to build a 2.5D motion studio with Opus 5.5</a> (https://x.com/Y0urDumble/status/2115164938884862375)</li>
+<li><strong>Stats at capture (19 Nov 2026):</strong> 34,856 views · 553 likes · 64 reposts · 13 replies · 846 bookmarks</li>
+<li><strong>Captured via:</strong> Apify (<code>xquik/x-tweet-scraper</code> for the post, <code>apidojo/tweet-scraper</code> for replies). All t.co short links expanded to their real GitHub URLs.</li>
+</ul>
+<h2 id="attached-video">Attached video</h2>
+<figure class="video tall"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2123129525605179392/img/ctXCc1OJ-XqPXBNa.jpg"><source src="https://video.twimg.com/amplify_video/2123129525605179392/vid/avc1/1440x1800/KNdLS1eQm-9fwa1r.mp4?tag=29" type="video/mp4"></video><figcaption>Video, 20 s, 1440x1800 (4:5) · <a href="https://video.twimg.com/amplify_video/2123129525605179392/vid/avc1/1440x1800/KNdLS1eQm-9fwa1r.mp4?tag=29">MP4</a></figcaption></figure>
+
+<h2 id="full-post-text-verbatim-links-expanded">Full post text (verbatim, links expanded)</h2>
+<p>HOLY F*CK, CAPCUT IS COOKED.</p>
+<p>Claude Opus 5.5 + 13 free GitHub repos = your own editing desk</p>
+<p>raw clip in. finished short out. no editor, no subscription ↓</p>
+<p>01 yt-dlp → pulls any clip from 1,000+ sites
+<a href="https://github.com/yt-dlp/yt-dlp">https://github.com/yt-dlp/yt-dlp</a></p>
+<p>02 LosslessCut → instant cuts with zero re-encode
+<a href="https://github.com/mifi/lossless-cut">https://github.com/mifi/lossless-cut</a></p>
+<p>03 auto-editor → deletes every silent gap for you
+<a href="https://github.com/WyattBlue/auto-editor">https://github.com/WyattBlue/auto-editor</a></p>
+<p>04 faster-whisper → word-timed transcript in seconds
+<a href="https://github.com/SYSTRAN/faster-whisper">https://github.com/SYSTRAN/faster-whisper</a></p>
+<p>05 remotion skills → word-pop captions that actually sync
+<a href="https://github.com/remotion-dev/skills">https://github.com/remotion-dev/skills</a></p>
+<p>06 chatterbox → voiceover and voice cloning, runs locally
+<a href="https://github.com/resemble-ai/chatterbox">https://github.com/resemble-ai/chatterbox</a></p>
+<p>07 DeepFilterNet → kills background noise
+<a href="https://github.com/Rikorose/DeepFilterNet">https://github.com/Rikorose/DeepFilterNet</a></p>
+<p>08 demucs → splits voice, music and drums
+<a href="https://github.com/facebookresearch/demucs">https://github.com/facebookresearch/demucs</a></p>
+<p>09 rembg → green screen without the screen
+<a href="https://github.com/danielgatis/rembg">https://github.com/danielgatis/rembg</a></p>
+<p>10 Real-ESRGAN → blurry footage to sharp 4K
+<a href="https://github.com/xinntao/Real-ESRGAN">https://github.com/xinntao/Real-ESRGAN</a></p>
+<p>11 davinci-resolve-mcp → Claude grades your footage inside Resolve
+<a href="https://github.com/samuelgursky/davinci-resolve-mcp">https://github.com/samuelgursky/davinci-resolve-mcp</a></p>
+<p>12 OpenCut → the open-source CapCut timeline
+<a href="https://github.com/OpenCut-app/OpenCut">https://github.com/OpenCut-app/OpenCut</a></p>
+<p>13 hyperframes → titles, motion and the final render
+<a href="https://github.com/heygen-com/hyperframes">https://github.com/heygen-com/hyperframes</a></p>
+<p>grab → cut → transcribe → caption → voice → clean → grade → render</p>
+<p>591K stars combined. all free. all open-source.</p>
+<p>Bookmark this. How to build a fully functioning 0$ motion studio is explained in the article below ↓</p>
+<h2 id="quick-reference-table">Quick-reference table</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Repo</th>
+<th>What it does (author's line)</th>
+<th>Pipeline step</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>yt-dlp</td>
+<td>pulls any clip from 1,000+ sites</td>
+<td>Grab</td>
+<td><a href="https://github.com/yt-dlp/yt-dlp">yt-dlp/yt-dlp</a></td>
+</tr>
+<tr>
+<td>02</td>
+<td>LosslessCut</td>
+<td>instant cuts with zero re-encode</td>
+<td>Cut</td>
+<td><a href="https://github.com/mifi/lossless-cut">mifi/lossless-cut</a></td>
+</tr>
+<tr>
+<td>03</td>
+<td>auto-editor</td>
+<td>deletes every silent gap for you</td>
+<td>Cut</td>
+<td><a href="https://github.com/WyattBlue/auto-editor">WyattBlue/auto-editor</a></td>
+</tr>
+<tr>
+<td>04</td>
+<td>faster-whisper</td>
+<td>word-timed transcript in seconds</td>
+<td>Transcribe</td>
+<td><a href="https://github.com/SYSTRAN/faster-whisper">SYSTRAN/faster-whisper</a></td>
+</tr>
+<tr>
+<td>05</td>
+<td>remotion skills</td>
+<td>word-pop captions that actually sync</td>
+<td>Caption</td>
+<td><a href="https://github.com/remotion-dev/skills">remotion-dev/skills</a></td>
+</tr>
+<tr>
+<td>06</td>
+<td>chatterbox</td>
+<td>voiceover and voice cloning, runs locally</td>
+<td>Voice</td>
+<td><a href="https://github.com/resemble-ai/chatterbox">resemble-ai/chatterbox</a></td>
+</tr>
+<tr>
+<td>07</td>
+<td>DeepFilterNet</td>
+<td>kills background noise</td>
+<td>Clean</td>
+<td><a href="https://github.com/Rikorose/DeepFilterNet">Rikorose/DeepFilterNet</a></td>
+</tr>
+<tr>
+<td>08</td>
+<td>demucs</td>
+<td>splits voice, music and drums</td>
+<td>Clean</td>
+<td><a href="https://github.com/facebookresearch/demucs">facebookresearch/demucs</a></td>
+</tr>
+<tr>
+<td>09</td>
+<td>rembg</td>
+<td>green screen without the screen</td>
+<td>Clean</td>
+<td><a href="https://github.com/danielgatis/rembg">danielgatis/rembg</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Real-ESRGAN</td>
+<td>blurry footage to sharp 4K</td>
+<td>Grade</td>
+<td><a href="https://github.com/xinntao/Real-ESRGAN">xinntao/Real-ESRGAN</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>davinci-resolve-mcp</td>
+<td>Claude grades your footage inside Resolve</td>
+<td>Grade</td>
+<td><a href="https://github.com/samuelgursky/davinci-resolve-mcp">samuelgursky/davinci-resolve-mcp</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>OpenCut</td>
+<td>the open-source CapCut timeline</td>
+<td>Render</td>
+<td><a href="https://github.com/OpenCut-app/OpenCut">OpenCut-app/OpenCut</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>hyperframes</td>
+<td>titles, motion and the final render</td>
+<td>Render</td>
+<td><a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a></td>
+</tr>
+</tbody>
+</table>
+<p>The "Pipeline step" column is my mapping onto the post's own "grab → cut → transcribe → caption → voice → clean → grade → render" line; the author did not label each repo.</p>
+<h2 id="replies-captured-10-of-13-shown-publicly">Replies captured (10 of 13 shown publicly)</h2>
+<table>
+<thead>
+<tr>
+<th>Time (UTC)</th>
+<th>Author</th>
+<th>Reply</th>
+<th>Likes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18 Nov 19:10</td>
+<td><a href="https://x.com/0xTenzo/status/2123131652662526227">@0xTenzo</a></td>
+<td>the automated workflow is impressive</td>
+<td>4</td>
+</tr>
+<tr>
+<td>18 Nov 19:14</td>
+<td>↳ <a href="https://x.com/Y0urDumble/status/2123132663456494035">@Y0urDumble</a></td>
+<td>automation now and automation before have such a huge quality gap</td>
+<td>2</td>
+</tr>
+<tr>
+<td>18 Nov 19:11</td>
+<td><a href="https://x.com/itsTeko0/status/2123131897039773731">@itsTeko0</a></td>
+<td>auto editor alone saves my hours</td>
+<td>3</td>
+</tr>
+<tr>
+<td>18 Nov 19:13</td>
+<td>↳ <a href="https://x.com/Y0urDumble/status/2123132458606403659">@Y0urDumble</a></td>
+<td>that's how it usually be with this skill, such a huge cheat</td>
+<td>3</td>
+</tr>
+<tr>
+<td>18 Nov 19:12</td>
+<td><a href="https://x.com/0xZayaaa/status/2123132239412158762">@0xZayaaa</a></td>
+<td>didn't know half of these existed</td>
+<td>3</td>
+</tr>
+<tr>
+<td>18 Nov 19:14</td>
+<td><a href="https://x.com/ericmaskfr/status/2123132866934509674">@ericmaskfr</a></td>
+<td>wait, this whole setup is free? the auto-editor and captions alone make it worth saving</td>
+<td>3</td>
+</tr>
+<tr>
+<td>18 Nov 19:20</td>
+<td>↳ <a href="https://x.com/Y0urDumble/status/2123134348538847444">@Y0urDumble</a></td>
+<td>all the repos i post are free brother, crazy, right?</td>
+<td>3</td>
+</tr>
+<tr>
+<td>18 Nov 19:15</td>
+<td><a href="https://x.com/hodlevd/status/2123133008790040980">@hodlevd</a></td>
+<td>wow, bookmarking this right now</td>
+<td>3</td>
+</tr>
+<tr>
+<td>18 Nov 19:21</td>
+<td>↳ <a href="https://x.com/Y0urDumble/status/2123134425244565721">@Y0urDumble</a></td>
+<td>make sure you do! Will save you literal HOURS</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>One further item returned by the scraper was an unrelated Slack ad and has been excluded.</p></article><aside class="toc"><b>On this page</b><a href="#attached-video">Attached video</a><a href="#full-post-text-verbatim-links-expanded">Full post text (verbatim, links expanded)</a><a href="#quick-reference-table">Quick-reference table</a><a href="#replies-captured-10-of-13-shown-publicly">Replies captured (10 of 13 shown publicly)</a></aside></div>
+<div class="foot">All archived content © its original authors. Captured from X for personal reference.</div>
+<script>
+document.querySelectorAll('pre').forEach(pre=>{const b=document.createElement('button');b.className='copy';b.textContent='Copy';
+b.onclick=()=>{navigator.clipboard.writeText(pre.innerText.replace(/^Copy\n?/,'')).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1400)})};pre.prepend(b)});
+</script></body></html>

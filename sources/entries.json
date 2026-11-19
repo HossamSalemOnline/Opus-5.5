@@ -1,0 +1,36 @@
+{
+  "hub": {
+    "title": "Opus 5.5 Knowledge Hub",
+    "tagline": "Guides, prompts, repos and every video from X, archived word for word and kept in one place that grows with each new post.",
+    "owner": "HossamSalemOnline",
+    "repo": "Opus-5.5"
+  },
+  "entries": [
+    {
+      "id": "e002",
+      "file": "content/e002-2-5d-motion-studio-course.md",
+      "title": "How to build a 2.5D motion studio with Opus 5.5 (Full Course)",
+      "kind": "Article",
+      "author": "Dumble",
+      "handle": "Y0urDumble",
+      "date": "2026-10-27",
+      "source": "https://x.com/Y0urDumble/status/2115164938884862375",
+      "cover": "docs/media/e002-cover.jpg",
+      "summary": "A 9-part course on the 27M-view 2.5D shorts format: flat 2D characters in lit 3D Blender sets. House rules, story and shot-list prompts, Blender MCP set passes, cut-out rigs, word-timed captions, sound cues and the frame-by-frame review loop, plus a ready SKILL.md.",
+      "tags": ["Blender", "MCP", "Remotion", "Whisper", "2.5D animation", "Claude Code"]
+    },
+    {
+      "id": "e001",
+      "file": "content/e001-13-repos-editing-desk.md",
+      "title": "Claude Opus 5.5 + 13 free GitHub repos = your own editing desk",
+      "kind": "Post",
+      "author": "Dumble",
+      "handle": "Y0urDumble",
+      "date": "2026-11-18",
+      "source": "https://x.com/Y0urDumble/status/2123130575230042601",
+      "cover": "docs/media/e001-editing-desk-poster.jpg",
+      "summary": "A free, open-source CapCut replacement: 13 repos covering grab, cut, transcribe, caption, voice, clean, grade and render.",
+      "tags": ["Video editing", "Open source", "Captions", "Audio"]
+    }
+  ]
+}

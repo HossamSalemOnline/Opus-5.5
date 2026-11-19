@@ -1,0 +1,535 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to build a 2.5D motion studio with Opus 5.5 (Full Course)</title><meta name="robots" content="noindex"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>
+:root{--bg:#0d0c0b;--panel:#171513;--panel2:#1f1c19;--line:#2f2a25;--ink:#f4efe6;--muted:#ada393;
+--accent:#d97757;--accent2:#e8a87c;--mustard:#e8a87c;--cream:#f0e6d6;--radius:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#3a2016 0%,transparent 60%),var(--bg);
+color:var(--ink);font:17px/1.7 Inter,system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--mustard);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(14,10,9,.78);border-bottom:1px solid var(--line)}
+.nav .in{max-width:1180px;margin:auto;display:flex;align-items:center;gap:22px;padding:14px 22px;flex-wrap:wrap}
+.brand{font-family:'Bricolage Grotesque',Inter,sans-serif;font-weight:800;font-size:19px;color:var(--ink)}
+.brand b{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav a.l{color:var(--muted);font-size:15px;font-weight:500}.nav a.l.on,.nav a.l:hover{color:var(--ink);text-decoration:none}
+.nav .sp{flex:1}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',Inter,sans-serif;line-height:1.15;letter-spacing:-.015em}
+h1{font-size:clamp(34px,5vw,56px);margin:.2em 0 .4em}
+h2{font-size:30px;margin:2.2em 0 .6em;padding-top:.4em}
+h3{font-size:22px;margin:1.8em 0 .5em;color:var(--cream)}h4{font-size:18px;margin:1.6em 0 .4em;color:var(--mustard)}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:56px;max-width:1180px;margin:auto;padding:40px 22px 100px}
+.doc{max-width:780px;min-width:0}
+.toc{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 110px);overflow:auto;font-size:14px;border-left:1px solid var(--line);padding-left:18px}
+.toc b{display:block;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.toc a{display:block;color:var(--muted);padding:4px 0;line-height:1.35}.toc a:hover{color:var(--ink);text-decoration:none}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.toc{display:none}}
+p,li,td{color:#eadcc6;overflow-wrap:anywhere}strong{color:var(--ink)}
+hr{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:48px 0}
+blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 12px 12px 0;color:var(--muted)}
+blockquote p{margin:.3em 0;color:#e2d3bd}
+code{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:.88em;background:var(--panel2);border:1px solid var(--line);padding:.1em .4em;border-radius:6px}
+pre{position:relative;background:#120d0c;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;overflow:auto;line-height:1.55}
+pre code{background:none;border:0;padding:0;font-size:13.5px;color:#f1e2cb;white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:10px;right:10px;font:600 12px Inter,sans-serif;color:var(--ink);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer;opacity:.85}
+.copy:hover{opacity:1;border-color:var(--accent)}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:22px 0;font-size:15px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:block;overflow-x:auto}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--panel2);color:var(--cream);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}tbody tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+img{max-width:100%;border-radius:12px}
+figure{margin:30px 0}figure img{display:block;margin:auto;border:1px solid var(--line)}
+figure.video video{display:block;width:100%;border-radius:var(--radius);border:1px solid var(--line);background:#000;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+figure.video.tall video{max-height:78vh;width:auto;max-width:100%;margin:auto}
+figcaption{text-align:center;font-size:14px;color:var(--muted);margin-top:10px}
+figcaption a{font-weight:600}
+.hero{position:relative;border-radius:28px;overflow:hidden;margin:36px 0 18px;border:1px solid var(--line)}
+.hero img{display:block;width:100%;border-radius:0}
+.hero-copy{padding:40px 0 10px;max-width:820px}
+.hero-copy p.lead{font-size:20px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:30px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.stat b{display:block;font:800 30px 'Bricolage Grotesque',Inter,sans-serif;color:var(--ink)}
+.stat span{color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:26px 0 10px}
+.card{display:block;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:26px;color:var(--ink);transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);text-decoration:none}
+.card .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.card h3{margin:.4em 0 .3em;color:var(--ink)}.card p{color:var(--muted);margin:0;font-size:15px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:22px}
+.gallery .g{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.gallery video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+.gallery .g.tall video{aspect-ratio:4/5}
+.gallery .t{padding:12px 14px}.gallery .t b{display:block}.gallery .t span{font-size:13.5px;color:var(--muted)}
+.foot{border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;text-align:center;padding:30px 22px 50px}
+.pill{display:inline-block;font-size:12.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+
+.entry{display:grid;grid-template-columns:220px 1fr;gap:22px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:18px;color:var(--ink);margin-bottom:18px;transition:.2s}
+.entry:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px)}
+.entry img{width:100%;height:150px;object-fit:cover;border-radius:14px}
+.entry .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.entry h3{margin:.3em 0 .4em;color:var(--ink)}.entry p{color:var(--muted);margin:.2em 0 .6em;font-size:15px}
+@media(max-width:700px){.entry{grid-template-columns:1fr}.entry img{height:180px}}
+.tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);margin:0 6px 6px 0}
+.hero-grad{border-radius:28px;border:1px solid var(--line);padding:56px 40px;margin:36px 0 10px;background:radial-gradient(600px 300px at 85% 20%,rgba(217,119,87,.35),transparent 70%),linear-gradient(180deg,var(--panel2),var(--panel))}
+</style></head><body>
+<nav class="nav"><div class="in"><a class="brand" href="index.html">Opus <b>5.5</b> Knowledge Hub</a><span class="sp"></span><a class="l" href="index.html">Home</a><a class="l" href="e001.html">Post · Claude Opus 5.5 + 13 free Gi…</a><a class="l on" href="e002.html">Article · How to build a 2.5D motion s…</a><a class="l" href="repos.html">All repos</a><a class="l" href="sources.html">Sources</a></div></nav>
+<div class="layout"><article class="doc"><h1 id="how-to-build-a-25d-motion-studio-with-opus-55-full-course">How to build a 2.5D motion studio with Opus 5.5 (Full Course)</h1>
+<figure><img src="https://pbs.twimg.com/media/HVqS0I5XsAEvuDf.jpg" alt="Course cover"></figure>
+
+<ul>
+<li><strong>Author:</strong> Dumble (<a href="https://x.com/Y0urDumble">@Y0urDumble</a>)</li>
+<li><strong>Published:</strong> Tue 27 Oct 2026, 19:33 UTC (X Article)</li>
+<li><strong>Source:</strong> <a href="https://x.com/Y0urDumble/status/2115164938884862375">https://x.com/Y0urDumble/status/2115164938884862375</a></li>
+<li><strong>Announcement post:</strong> "this is the most underrated format on youtube right now / a 65-second cartoon about a bronze jar got 27M views in 8 days / 2D characters. lit 3D sets. one voice. a true story. / here's the full course: prompts, skills and the review loop ↓"</li>
+<li><strong>Stats at capture (19 Nov 2026):</strong> 1,193,765 views · 1,113 likes · 233 reposts · 24 quotes · 17 replies · 3,430 bookmarks</li>
+<li><strong>Captured via:</strong> Apify (<code>xquik/x-article-scraper</code>, full content blocks). Embedded posts captured with <code>xquik/x-tweet-scraper</code> and shown in place.</li>
+<li><strong>Note:</strong> text is verbatim. The only change: the word "copy" that X's copy button appended to the end of each code block has been removed. "09. The cut-out ri" is truncated in the original and kept as is.</li>
+</ul>
+<hr />
+<p>A 65-second cartoon about a bronze jar went up on YouTube on October 19.</p>
+<p>Eight days later it had 27 million views.</p>
+<p>A flat cartoon guy with a round head, standing in a throne room that looks like it was lit by a film crew, telling the true story of a jar that warned an empire.</p>
+<figure class="video tall"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115149518282821632/img/iQu1t5BzdEJIq-ol.jpg"><source src="https://video.twimg.com/amplify_video/2115149518282821632/vid/avc1/1080x1920/y05BqJUEVG2PSWrY.mp4?tag=29" type="video/mp4"></video><figcaption>The 27M-view bronze jar short, 65 s, 1080x1920 · <a href="https://video.twimg.com/amplify_video/2115149518282821632/vid/avc1/1080x1920/y05BqJUEVG2PSWrY.mp4?tag=29">MP4</a></figcaption></figure>
+
+<p>The same channel, Ricks Clips, has more shorts in the same format at 13M, 10M and 10M views.</p>
+<p>I went through that video frame by frame. The format is not magic, and almost every part of it can now be built with Opus 5.5, Blender and a handful of open-source skills.</p>
+<p>This course shows you how, step by step, with the real repos, the real prompts and the mistakes that get you called slop in the replies.</p>
+<blockquote>
+<p><strong>One honest note before we start:</strong> I don't know the exact pipeline behind Ricks Clips, and nobody outside the channel does. What follows is the open-source way to build the same format yourself.</p>
+</blockquote>
+<p>Here is where all of this starts:</p>
+<blockquote>
+<p><strong>[Embedded post]</strong> <a href="https://x.com/claudeai/status/2102435511222890900">@claudeai</a> · Tue 22 Sep 2026 · 29,725,802 views · 98,375 likes</p>
+<p>Introducing Claude Opus 5.5, the first model in our new Claude 5.5 family.</p>
+<p>It performs at the level of Claude Fable 5.1 for most tasks, and costs 40% less to run than Opus 5.</p>
+</blockquote>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/media/HS1aPgYWMAAP9sw.jpg"><source src="https://video.twimg.com/amplify_video/2102432417352929280/vid/avc1/1920x1080/yilx3O9YWu7w9vaX.mp4?tag=29" type="video/mp4"></video><figcaption>Claude Opus 5.5 launch, 20 s, 1920x1080 · <a href="https://video.twimg.com/amplify_video/2102432417352929280/vid/avc1/1920x1080/yilx3O9YWu7w9vaX.mp4?tag=29">MP4</a></figcaption></figure>
+
+<h2 id="part-1-why-this-format-works">Part 1 - Why this format works</h2>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115157446935117824/img/3c1GxgjVZsnxKGZ6.jpg"><source src="https://video.twimg.com/amplify_video/2115157446935117824/vid/avc1/1280x720/5X9WcWVfasRvvohO.mp4?tag=29" type="video/mp4"></video><figcaption>Part 1 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157446935117824/vid/avc1/1280x720/5X9WcWVfasRvvohO.mp4?tag=29">MP4</a></figcaption></figure>
+
+<h3 id="01-anatomy-of-a-27m-view-short">01. Anatomy of a 27M-view short</h3>
+<p>I cut the jar video into one frame per second and laid all 65 on a sheet. This is what is actually on screen:</p>
+<pre><code>FORMAT        1080x1920, 30 fps, 65 seconds
+STORY         one true story from history, told in one voice
+CHARACTERS    flat 2D: round heads, dot eyes, thick outlines, stick limbs
+SETS          full 3D: lit throne rooms, castles, crowds, depth of field
+MIX           2D characters standing inside 3D-lit worlds (2.5D)
+CUTS          a new shot roughly every 2 seconds
+CAMERA        slow push-ins and dolly moves, never random drift
+CAPTIONS      1-2 words at a time, bold white, centre-low
+HOOK          a question in the title: why / how / what really happened
+</code></pre>
+<figure><img src="https://pbs.twimg.com/media/HVqP9vpWoAASYpr.jpg" alt="Anatomy of the short"></figure>
+
+<p>The story, by the way, is real. It's Zhang Heng's seismoscope from 132 AD: a bronze jar with eight dragons holding balls over eight frogs. When the ground shook, a ball dropped into a frog's mouth and showed the direction of the quake. <a href="https://en.wikipedia.org/wiki/Zhang_Heng">Zhang Heng, Wikipedia</a></p>
+<p>That is the first lesson. The viewer gets a fact they can repeat at dinner. The animation is the delivery, not the point.</p>
+<p>You can run the same breakdown on any reference with Claude Code.</p>
+<p>Extract the frames first:</p>
+<pre><code>ffmpeg -i reference.mp4 -vf &quot;fps=2,scale=540:-2&quot; frames/ref-%04d.jpg
+</code></pre>
+<p>Then paste this:</p>
+<pre><code>Analyze reference.mp4 as a format, not as content to copy.
+First report its size, frame rate and duration with ffprobe.
+Open the frames in frames/ and look at them.
+
+Save REFERENCE.md with:
+- every cut, with timestamp and frame number
+- what is 2D and what is 3D in each shot
+- camera move per shot (static / push-in / dolly / pan) and its direction
+- caption style: words per card, position, when a card changes
+- the hook line and where the twist lands
+
+Label every value as MEASURED (read from a frame), ESTIMATED (by eye)
+or DECISION (my creative choice for our version). For anything uncertain,
+name the exact frames I should check.
+</code></pre>
+<p>Never copy characters, designs, script or story structure 1:1.
+End with 5 decisions for our own original episode.</p>
+<p>Keep the labels. Claude's spatial estimates from images are approximate, so anything you will build on should be checked against the frame. <a href="https://platform.claude.com/docs/en/build-with-claude/vision">Claude vision docs</a></p>
+<h3 id="02-why-it-doesnt-read-as-ai-slop">02. Why it doesn't read as AI slop</h3>
+<p>Most AI animation dies in the first two seconds because it looks like every other AI animation. This format survives because it breaks the usual tells:</p>
+<ul>
+<li><strong>The characters are deliberately simple.</strong> Nobody expects realism from a round-head cartoon, so nothing looks uncanny.</li>
+<li><strong>The sets are deliberately rich.</strong> Warm light, real materials, depth. That contrast is the signature.</li>
+<li><strong>Every shot has a reason.</strong> A new shot lands on a new idea in the script, not on a timer.</li>
+<li><strong>One human voice.</strong> The channel description literally says Rick is a regular guy who loves doing voiceovers.</li>
+<li><strong>A true story.</strong> Facts can be checked. That alone earns more trust than any effect.</li>
+</ul>
+<p>Keep those five in mind. Every step below protects one of them.</p>
+<h2 id="part-2-set-up-the-studio">Part 2 - Set up the studio</h2>
+<h3 id="03-install-only-what-the-film-needs">03. Install only what the film needs</h3>
+<p>Skills are code that runs with your agent. Open each repo and read it before you install it.</p>
+<pre><code># Let Claude drive Blender (Blender 4.2+, uv)
+uvx mcp-for-blender setup
+# manual: claude mcp add blender uvx mcp-for-blender
+#         uvx mcp-for-blender install-addon
+
+# Taste: timing, easing, Disney's 12 principles for agents
+npx skills add LottieFiles/motion-design-skill
+
+# Assemble picture, captions and sound
+npx skills add remotion-dev/skills
+
+# Word-level timestamps for the captions
+pip install -U openai-whisper
+</code></pre>
+<p>Then open Claude Code on Opus 5.5. Use xhigh effort for a new episode and medium for fixes and re-renders. <a href="https://github.com/ahujasid/mcp-for-blender">MCP for Blender README</a> · <a href="https://www.remotion.dev/docs/ai/skills">Remotion AI skills</a></p>
+<figure><img src="https://pbs.twimg.com/media/HVqQTumX0AAqN6Q.jpg" alt="Studio setup"></figure>
+
+<h3 id="04-write-the-house-rules-once">04. Write the house rules once</h3>
+<p>Claude Code reads CLAUDE.md on every run. Put the format in it, so every episode starts from the same rules. <a href="https://code.claude.com/docs/en/memory">Claude Code memory docs</a></p>
+<pre><code># 2.5D shorts studio
+
+## Format
+- 1080x1920, 30 fps, 55-70 seconds. Render at exactly this size, never crop or upscale.
+- Flat 2D characters inside lit 3D sets. Characters never get realistic shading.
+- A new shot on every new idea in the script, roughly every 2 seconds.
+- Camera: slow push-in or dolly with a reason. No random drift, no constant orbit.
+
+## Story
+- True stories only. Every claim in the script gets a source in sources.md.
+- The first line is the hook. The last line pays it off.
+
+## Look
+- Sets: one motivated key light, warm practicals (candles, windows, torches), depth of field.
+- Materials have wear and variation. Nothing perfectly clean.
+- Characters: flat colour, thick dark outline, a contact shadow on the floor so they sit in the set.
+
+## Banned
+- Centered title on a gradient. Corner labels, timecodes, frame borders.
+- Everything fading in. A whoosh on every cut.
+- Any number or claim on screen that is not in sources.md.
+
+## Review before I see anything
+1. Contact sheet, one frame per second. Look at it.
+2. List every problem with a timestamp. Fix the 3 worst. Repeat.
+</code></pre>
+<h2 id="part-3-story-first">Part 3 - Story first</h2>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115157667047956481/img/dU2jZZlWUgGOY4OJ.jpg"><source src="https://video.twimg.com/amplify_video/2115157667047956481/vid/avc1/1280x720/NmUGiq51gkw0WLjq.mp4?tag=29" type="video/mp4"></video><figcaption>Part 3 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157667047956481/vid/avc1/1280x720/NmUGiq51gkw0WLjq.mp4?tag=29">MP4</a></figcaption></figure>
+
+<h3 id="05-the-script-is-160-words">05. The script is 160 words</h3>
+<p>A 65-second short read at a normal pace is about 150-170 words. That is the whole budget. Opus is very good at this if you force it to show its sources:</p>
+<figure><img src="https://pbs.twimg.com/media/HVqQf3zW8AAmd78.jpg" alt="Script"></figure>
+
+<pre><code>Find 5 true stories from history or science that fit this title pattern:
+&quot;The [object] That [did something surprising]&quot; or &quot;Why [thing] Always [does X]&quot;.
+
+For each: one line on the story, why a 12-year-old and a 50-year-old would
+both repeat it, and 2 sources I can open.
+
+Then write the script for the one I pick:
+- 150-170 words, one narrator, spoken English, short sentences
+- line 1 is the hook and makes a promise
+- a twist around second 40
+- the last line pays off the hook
+- write sources.md with a source for every factual claim
+</code></pre>
+<p>Check the sources yourself. This is the one step you never hand off completely.</p>
+<h3 id="06-turn-the-script-into-shots">06. Turn the script into shots</h3>
+<p>Now split the script into shots, one per idea. This becomes the contract for everything after it:</p>
+<pre><code>Split script.md into a shot list. One shot per idea, 1.5-3 seconds each.
+
+For every shot write:
+  id, words it covers, duration
+  SET        which 3D set and where in it
+  CAMERA     framing + move (push-in / dolly / static), with the reason
+  CHARACTER  who is on screen, pose, expression from the expression sheet
+  PROP       any hero object (it must be built in 3D, not drawn)
+  SOUND      only if something physical happens
+
+Reuse sets. A 65s episode should need 3-5 sets, not 30.
+</code></pre>
+<p>Then write the key beats in frames, not seconds. Here is a worked example for one beat of my own version of the story, at 30 fps. These are my starting numbers, not measured from the original:</p>
+<pre><code>GLOBAL FRAME   TIME     EVENT
+1215           40.5s    SHOT 18 starts: wide on the jar, night, court asleep
+1230           41.0s    push-in begins, scale 1.00 -&gt; 1.06 over 60 frames
+1248           41.6s    the west dragon's mouth opens
+1254           41.8s    the ball drops
+1262           42.1s    the ball hits the frog (hit sound on this frame)
+1266           42.2s    CUT to SHOT 19: the inventor's eyes open
+1272           42.4s    caption &quot;dropped&quot; fully readable
+1290           43.0s    hold ends, cut
+</code></pre>
+<p>Physics keeps you honest here. A ball falling about 30 cm takes roughly a quarter of a second, so 7-8 frames at 30 fps. Make it slower and it reads as floaty, which viewers feel even when they can't name it.</p>
+<p>Now every revision is a number. "Move the hit to 1260" is an edit an agent can't misread.</p>
+<h2 id="part-4-build-the-world-in-blender">Part 4 - Build the world in Blender</h2>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115157777257574400/img/82DrdaJOElyNugCv.jpg"><source src="https://video.twimg.com/amplify_video/2115157777257574400/vid/avc1/1278x720/7Web--w6XpX-1grF.mp4?tag=29" type="video/mp4"></video><figcaption>Part 4 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157777257574400/vid/avc1/1278x720/7Web--w6XpX-1grF.mp4?tag=29">MP4</a></figcaption></figure>
+
+<h3 id="07-sets-through-mcp-block-light-then-dress">07. Sets through MCP: block, light, then dress</h3>
+<p>MCP for Blender runs a small server inside Blender. Claude writes Blender Python itself, and the MCP adds what Python cannot do alone: <strong>look</strong> shows it the viewport, the camera, a multi-angle sheet or an animation strip, and <strong>search_assets</strong> pulls real Poly Haven HDRIs and textures.</p>
+<p>That look tool is the whole game. The agent checks its own work instead of guessing. <a href="https://github.com/ahujasid/mcp-for-blender">MCP for Blender README</a></p>
+<p>Poly Haven assets are CC0, so you can use them in a monetized video without credit. <a href="https://polyhaven.com/license">Poly Haven license</a></p>
+<p>Anthropic's own Alex Albert showed how far this already goes on launch day:</p>
+<blockquote>
+<p><strong>[Embedded post]</strong> <a href="https://x.com/alexalbert__/status/2102458348511879448">@alexalbert__</a> · Tue 22 Sep 2026 · 272,346 views · 2,652 likes</p>
+<p>I just realized Opus 5.5 can use Blender to make claymations with just a single prompt in claude dot ai now</p>
+</blockquote>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2102457816820916224/img/UNnuG_dYWVbvKNZu.jpg"><source src="https://video.twimg.com/amplify_video/2102457816820916224/vid/avc1/1612x1080/pdOJXL6ne_LOROg3.mp4?tag=29" type="video/mp4"></video><figcaption>Blender claymation from one prompt, 22 s · <a href="https://video.twimg.com/amplify_video/2102457816820916224/vid/avc1/1612x1080/pdOJXL6ne_LOROg3.mp4?tag=29">MP4</a></figcaption></figure>
+
+<p>Build each set in passes, and stop after each one:</p>
+<figure><img src="https://pbs.twimg.com/media/HVqQrXwXQAAwKkw.jpg" alt="Set passes"></figure>
+
+<pre><code>You are building SET 2 (the throne room) for a vertical 2.5D short, in Blender through MCP.
+
+Pass 1, BLOCK: grey shapes for walls, throne, pillars, floor. Place every camera from
+shotlist.md. Use look on each camera and send me a sheet.
+
+Pass 2, LIGHT: one motivated key light (the windows), warm practicals (candles, torches),
+a Poly Haven HDRI for fill. No 3-point studio light. Send stills from 3 cameras.
+
+Pass 3, DRESS: materials with wear and variation, banners, carpet, small props.
+Depth of field on every camera, focused where the character will stand.
+
+Render size is 1080x1920. Never render bigger and crop.
+</code></pre>
+<h3 id="08-hero-props-are-3d-always">08. Hero props are 3D, always</h3>
+<p>In the jar video the jar itself is a proper 3D object: bronze, gold dragons, frogs at the base. It gets close-ups, lighting and its own moment.</p>
+<p>That is a rule worth stealing. The thing the story is about is never a flat drawing. Ask for it as its own build, with a turntable check before it goes into a set:</p>
+<pre><code>Build the hero prop for this episode: [object, with a reference image or description].
+Real-world scale. Bevel every edge. Material with wear in the crevices.
+Render a 6-angle look sheet on a neutral floor. Then place it in SET 2 at the mark.
+</code></pre>
+<h2 id="part-5-put-2d-characters-in-3d">Part 5 - Put 2D characters in 3D</h2>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115157888607846400/img/alUfvNO6dKSYCP4F.jpg"><source src="https://video.twimg.com/amplify_video/2115157888607846400/vid/avc1/1280x720/p4wUbnmXZctR6rBA.mp4?tag=29" type="video/mp4"></video><figcaption>Part 5 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157888607846400/vid/avc1/1280x720/p4wUbnmXZctR6rBA.mp4?tag=29">MP4</a></figcaption></figure>
+
+<h3 id="09-the-cut-out-ri">09. The cut-out ri</h3>
+<p>This is the core of the 2.5D look. The characters are flat images on planes, standing inside the 3D set.</p>
+<p>Blender does this natively: Import Images as Planes with the Emit or Shadeless shader, so the set lights never shade them, plus a soft contact shadow under the feet so they sit on the floor instead of floating. <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/import_images_as_planes.html">Blender manual: Images as Planes</a></p>
+<figure><img src="https://pbs.twimg.com/media/HVqRUHlXEAAijqn.jpg" alt="Cut-out rig"></figure>
+
+<p>Faces work like old-school replacement animation: a set of eyes and mouths that swap per beat. Have Opus draw them as SVG first</p>
+<pre><code>Design a cartoon character as separate SVG parts on transparent backgrounds:
+head (one round shape), body, arms, legs, hat or costume for [role, era].
+
+Expression sheet, each as its own file:
+  eyes:  neutral, wide, narrow, closed, side-look
+  mouth: closed, small open, wide open, frown, grin
+  extra: sweat drop, blush
+
+Style rules: flat colour, one thick dark outline weight, no gradients, no textures.
+Export PNGs at 2x, then import every part into Blender as planes on one rig.
+</code></pre>
+<h3 id="10-acting-not-bouncing">10. Acting, not bouncing</h3>
+<p>The fastest way to spot generated 2D: the character never thinks. It bounces, waves and smiles, but nothing happens in its face before it moves.</p>
+<pre><code>Before you animate, write an acting line for every shot:
+
+SHOT 07 (2.1s)  &quot;the whole court laughed&quot;
+  thought:      the inventor knows he's right
+  anticipation: eyes narrow first, 4 frames before anything else moves
+  action:       head turns to camera on the word &quot;laughed&quot;
+  hold:         stay on the look for 10 frames so it reads
+
+Rules: no idle bounce. Every move starts with a look. Swap mouths only on stressed words.
+</code></pre>
+<p>For a hand-painted variant of the same idea, JohnHeibel's ClaudeAnimationBase (p5.js + p5.brush, 31 acted emotions) and the painted-animation skill from opus-video-skills are worth reading line by line.</p>
+<h2 id="part-6-voice-captions-sound">Part 6 - Voice, captions, sound</h2>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115157994392494080/img/XFc5H0YOS-uVTmyM.jpg"><source src="https://video.twimg.com/amplify_video/2115157994392494080/vid/avc1/1280x720/5hGbR5FwhvzHzMDW.mp4?tag=29" type="video/mp4"></video><figcaption>Part 6 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115157994392494080/vid/avc1/1280x720/5hGbR5FwhvzHzMDW.mp4?tag=29">MP4</a></figcaption></figure>
+
+<h3 id="11-your-voice-word-timed-captions">11. Your voice, word-timed captions</h3>
+<p>Record the script yourself. A real voice with real breaths is the single biggest trust signal in the format, and it keeps you clear of any voice-clone questions.</p>
+<p>Then let Whisper give you a timestamp for every word, and build the caption layer from that file. <a href="https://github.com/openai/whisper">Whisper README</a></p>
+<figure><img src="https://pbs.twimg.com/media/HVqReagW0AAgk5j.png" alt="Word-timed captions"></figure>
+
+<pre><code>whisper voice.wav --model small --word_timestamps True --output_format json --output_dir captions/
+</code></pre>
+<pre><code>Read captions/voice.json. Build the caption layer in Remotion:
+- 1-2 words on screen at a time, cut exactly on each word's start time
+- bold white, dark outline, centre-low, inside the 9:16 safe area
+- no pop-in animation on every word, only on stressed words
+Then line up every shot cut in shotlist.md with the word it belongs to.
+</code></pre>
+<h3 id="12-sound-that-lands">12. Sound that lands</h3>
+<p>Most AI films look done with the sound off. Turn it on and the cuts miss the beat and the last frame lands before the music resolves.</p>
+<p>earshot is an open-source MCP that lets a coding agent listen to audio, review it and make sound, CPU only. Use it as the ears of your review:</p>
+<pre><code>Listen to out/mix.wav with earshot and check it against shotlist.md:
+- the voice is always on top, music sits under it
+- a sound only where something physical happens (a ball drops, a door slams)
+- no whoosh repeated more than twice
+- the music resolves on the final frame
+</code></pre>
+<p>Write the cues next to the picture events, in the same frame numbers:</p>
+<pre><code>BALL DROP      frame 1254    soft metal release
+FROG HIT       frame 1262    bronze clink, strongest transient here
+EYES OPEN      frame 1266    music drops out for 20 frames
+FINAL LINE     frame 1920    music resolves
+</code></pre>
+<p>A soft lead-in on a sound file shifts its audible hit. Find the hit on the waveform and offset the clip so the peak lands on the frame.</p>
+<h2 id="part-7-the-review-loop">Part 7 - The review loop</h2>
+<figure class="video"><video controls playsinline preload="none" poster="https://pbs.twimg.com/amplify_video_thumb/2115158357212352512/img/esrpi3M9rY9wkCkH.jpg"><source src="https://video.twimg.com/amplify_video/2115158357212352512/vid/avc1/1280x720/Zfc564KE3yOrbHyu.mp4?tag=29" type="video/mp4"></video><figcaption>Part 7 title card, 4 s · <a href="https://video.twimg.com/amplify_video/2115158357212352512/vid/avc1/1280x720/Zfc564KE3yOrbHyu.mp4?tag=29">MP4</a></figcaption></figure>
+
+<h3 id="13-make-the-frames-come-to-you">13. Make the frames come to you</h3>
+<p>Never watch a full export ten times. Look at sheets:</p>
+<pre><code># One frame per second, the whole episode on one image
+ffmpeg -i out/episode.mp4 -vf &quot;fps=1,scale=240:-1,tile=8x9&quot; -frames:v 1 review/contact.png
+
+# Phone test: how it reads at 360 px wide
+ffmpeg -i out/episode.mp4 -vf &quot;fps=1/3,scale=360:-1,tile=6x4&quot; -frames:v 1 review/phone.png
+</code></pre>
+<figure><img src="https://pbs.twimg.com/media/HVqRte2XwAA4GTj.jpg" alt="Contact sheet"></figure>
+
+<p><a href="https://ffmpeg.org/ffmpeg-filters.html">FFmpeg filters docs</a></p>
+<p>When you fix something, never re-render the whole episode. Blender renders a single frame or a range from the command line:</p>
+<pre><code># one still at the frog hit
+blender -b episode.blend -o //review/still_ -f 1262
+
+# only the seconds around the fix (start and end before -a)
+blender -b episode.blend -o //review/fix_ -s 1215 -e 1290 -a
+</code></pre>
+<p><a href="https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html">Blender command line arguments</a></p>
+<p>Then hand the sheets to Opus as a critic, not as the author:</p>
+<pre><code>Open review/contact.png and review/phone.png.
+You did not make this. You are the harshest animation director I know.
+
+Check: does every character sit on the floor (contact shadow)? Is any character
+lit like a 3D object? Does any shot last longer than 3s without a new idea?
+Are captions readable at phone size? Is any claim on screen missing from sources.md?
+
+List every problem with a timestamp. Fix the 3 worst.
+Re-render only those seconds. Show me the new sheet.
+</code></pre>
+<p>Give every correction four fields: where, what is wrong, what changes, and what must stay fixed. An agent with a scoped edit doesn't wander:</p>
+<pre><code>Revise SHOT 18 using shotlist.md.
+WHERE      global frames 1248-1266
+PROBLEM    the ball hits the frog at 1268, 6 frames after the hit sound at 1262
+CHANGE     only the ball's fall: start at 1254, contact at 1262, ease-in (gravity), no bounce
+KEEP       camera push-in, the cut at 1266, the caption timing, every other shot
+
+Render stills at 1254, 1258, 1262, 1266 and a preview of 1215-1290.
+Check the in-between frames for jumps. Report what changed and the output files.
+</code></pre>
+<figure><img src="https://pbs.twimg.com/media/HVqSFEPXQAA1Yqq.jpg" alt="Scoped revision"></figure>
+
+<p>Fix in this order: anything wrong or missing first, then readability, then timing, then visual detail.</p>
+<p>When the episode is approved, check the export before you upload it:</p>
+<pre><code>ffprobe -v error -select_streams v:0 -show_entries stream=width,height,avg_frame_rate,duration -of json out/episode.mp4
+</code></pre>
+<p>You should see 1080 by 1920, a frame rate of 30/1 and the duration you planned. <a href="https://ffmpeg.org/ffprobe.html">ffprobe docs</a></p>
+<p>Once the loop works, package it so the next episode is one line:</p>
+<pre><code>---
+name: cartoon-studio
+description: Make a vertical 2.5D animated short (flat 2D characters in lit 3D Blender
+  sets) about a true story. Use when the user asks for a history or science short,
+  an animated explainer or a story episode.
+---
+
+# 2.5D short
+
+## Pipeline
+1. Pitch 5 true stories with sources. Wait for my pick.
+2. script.md (150-170 words) + sources.md. Wait for OK.
+3. shotlist.md: one shot per idea, 3-5 reusable sets.
+4. Sets in Blender: BLOCK -&gt; LIGHT -&gt; DRESS, look sheet after each pass.
+5. Hero prop in 3D. Characters as SVG parts -&gt; planes, flat material, contact shadow.
+6. Acting line per shot, then animate.
+7. My voice -&gt; whisper word timestamps -&gt; captions -&gt; mix, checked with earshot.
+8. Contact sheet + phone test -&gt; critic pass -&gt; fix 3 worst -&gt; repeat.
+
+## Hard rules
+- 1080x1920, render at size. True claims only, each in sources.md.
+- Never copy another channel's characters, designs or scripts.
+</code></pre>
+<p>Save it as ~/.claude/skills/cartoon-studio/SKILL.md and call it with /motion-studio.</p>
+<p>One story in. One episode out. One person.</p>
+<h2 id="part-8-your-first-episode">Part 8 - Your first episode</h2>
+<p>Don't plan a channel. Make one episode end to end, then decide.</p>
+<ul>
+<li><strong>Pick a story you'd tell a friend anyway.</strong> If it doesn't make you say "wait, really?", it won't make a stranger stop scrolling.</li>
+<li><strong>Time the whole job.</strong> Write down the hours for story, sets, characters, animation, voice, sound and review. The second episode tells you what the first one really cost.</li>
+<li><strong>Keep the paperwork with the video.</strong> script.md, sources.md, shotlist.md, the cue list and the approved export live in one folder. That folder is your template for episode two.</li>
+<li><strong>Watch it like a viewer.</strong> Normal speed, on your phone, sound on. Then once more with your eyes closed.</li>
+<li><strong>Learn from the graph, not from the view count.</strong> After it's live, YouTube Studio's audience retention shows the exact second people leave. Fix that kind of shot in the next episode.</li>
+</ul>
+<h2 id="part-9-stay-on-the-right-side-of-the-platform">Part 9 - Stay on the right side of the platform</h2>
+<p>This part decides whether the channel lasts.</p>
+<ul>
+<li><strong>Take the grammar, never the content.</strong> Study how a channel frames, cuts and captions. Never copy its characters, designs or scripts.</li>
+<li><strong>Original episodes, not templates.</strong> YouTube's monetization rules target mass-produced, repetitive content. A real story, your voice and new sets every episode are what keep you clear. <a href="https://support.google.com/youtube/answer/1311392">YouTube monetization policies</a></li>
+<li><strong>Know the AI label.</strong> YouTube's disclosure is for realistic altered content. Clearly unrealistic content like animation is generally exempt, but if anything could be mistaken for real footage, label it. <a href="https://blog.youtube/news-and-events/disclosing-ai-generated-content/">YouTube on AI disclosure</a></li>
+<li><strong>Facts stay facts.</strong> sources.md is not busywork. One wrong date in the comments costs you more trust than any render can buy back.</li>
+</ul>
+<h2 id="repos-to-clone">Repos to clone</h2>
+<p>All open, all checked on October 27, 2026:</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Repo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blender control</td>
+<td><a href="https://github.com/ahujasid/mcp-for-blender">github.com/ahujasid/mcp-for-blender</a></td>
+</tr>
+<tr>
+<td>Claymation in Blender (great for studying a Blender SKILL.md)</td>
+<td><a href="https://github.com/angrypenguinpng/blender-claymation-skill">github.com/angrypenguinpng/blender-claymation-skill</a></td>
+</tr>
+<tr>
+<td>Animation principles</td>
+<td><a href="https://github.com/LottieFiles/motion-design-skill">github.com/LottieFiles/motion-design-skill</a></td>
+</tr>
+<tr>
+<td>GSAP official skills</td>
+<td><a href="https://github.com/greensock/gsap-skills">github.com/greensock/gsap-skills</a></td>
+</tr>
+<tr>
+<td>Video assembly</td>
+<td><a href="https://github.com/remotion-dev/skills">github.com/remotion-dev/skills</a></td>
+</tr>
+<tr>
+<td>HTML video framework</td>
+<td><a href="https://github.com/heygen-com/hyperframes">github.com/heygen-com/hyperframes</a></td>
+</tr>
+<tr>
+<td>Hand-painted 2D</td>
+<td><a href="https://github.com/JohnHeibel/ClaudeAnimationBase">github.com/JohnHeibel/ClaudeAnimationBase</a></td>
+</tr>
+<tr>
+<td>Painted + kinetic skills</td>
+<td><a href="https://github.com/tuzhechen2005/opus-video-skills">github.com/tuzhechen2005/opus-video-skills</a></td>
+</tr>
+<tr>
+<td>Sound for agents</td>
+<td><a href="https://github.com/Leonxlnx/earshot">github.com/Leonxlnx/earshot</a></td>
+</tr>
+<tr>
+<td>Word timestamps</td>
+<td><a href="https://github.com/openai/whisper">github.com/openai/whisper</a></td>
+</tr>
+<tr>
+<td>59 film styles made in code</td>
+<td><a href="https://github.com/lemomo-ai/lemo-opuscar">github.com/lemomo-ai/lemo-opuscar</a></td>
+</tr>
+<tr>
+<td>180 video skills, graded</td>
+<td><a href="https://github.com/zhuyansen/awesome-claude-video-skills">github.com/zhuyansen/awesome-claude-video-skills</a></td>
+</tr>
+</tbody>
+</table>
+<p><sub>The author lists these as plain lines; shown here as a table with the same labels and links.</sub></p>
+<p>And if you want to see how wide this goes, Claude's own account collected some of the best things people built in the first week:</p>
+<blockquote>
+<p><strong>[Embedded post]</strong> <a href="https://x.com/claudeai/status/2103515655760982273">@claudeai</a> · Fri 25 Sep 2026 · 2,528,285 views · 19,964 likes</p>
+<p>Claude Opus 5.5 has been out for a few days. Some of our favorite things people have explored and discovered with it so far:</p>
+<p><a href="https://x.com/RyanSael/status/2102591147927654847">https://x.com/RyanSael/status/2102591147927654847</a></p>
+<blockquote>
+<p><strong>Quoted post,</strong> <a href="https://x.com/RyanSael/status/2102591147927654847">@RyanSael</a>:</p>
+<p>I asked Opus 5.5 to explain camera focus by building an interactive lens lab</p>
+<p>Here's what it came up with after 1 hour 26 minutes in one shot, $25.66 API cost</p>
+<p>Move the focus ring and you can see the glass elements shift the sharp plane through the scene</p>
+</blockquote>
+</blockquote>
+<h2 id="the-real-shift">The real shift</h2>
+<p>A year ago a short like the jar video needed a modeller, an animator, a lighter and an editor.</p>
+<p>Now it needs a true story, your voice, Blender, Opus 5.5 and the patience to review your own frames.</p>
+<p>The tools are free. The story, the taste and the honesty are still on you, and that's exactly why the format keeps working.</p>
+<p>Bookmark this before your first episode. You will want the house rules open next to the viewport.</p>
+<p><strong>Stay tuned for more content, I'm just getting started :)</strong></p></article><aside class="toc"><b>On this page</b><a href="#part-1-why-this-format-works">Part 1 - Why this format works</a><a href="#01-anatomy-of-a-27m-view-short" style="padding-left:12px">01. Anatomy of a 27M-view short</a><a href="#02-why-it-doesnt-read-as-ai-slop" style="padding-left:12px">02. Why it doesn't read as AI slop</a><a href="#part-2-set-up-the-studio">Part 2 - Set up the studio</a><a href="#03-install-only-what-the-film-needs" style="padding-left:12px">03. Install only what the film needs</a><a href="#04-write-the-house-rules-once" style="padding-left:12px">04. Write the house rules once</a><a href="#part-3-story-first">Part 3 - Story first</a><a href="#05-the-script-is-160-words" style="padding-left:12px">05. The script is 160 words</a><a href="#06-turn-the-script-into-shots" style="padding-left:12px">06. Turn the script into shots</a><a href="#part-4-build-the-world-in-blender">Part 4 - Build the world in Blender</a><a href="#07-sets-through-mcp-block-light-then-dress" style="padding-left:12px">07. Sets through MCP: block, light, then dress</a><a href="#08-hero-props-are-3d-always" style="padding-left:12px">08. Hero props are 3D, always</a><a href="#part-5-put-2d-characters-in-3d">Part 5 - Put 2D characters in 3D</a><a href="#09-the-cut-out-ri" style="padding-left:12px">09. The cut-out ri</a><a href="#10-acting-not-bouncing" style="padding-left:12px">10. Acting, not bouncing</a><a href="#part-6-voice-captions-sound">Part 6 - Voice, captions, sound</a><a href="#11-your-voice-word-timed-captions" style="padding-left:12px">11. Your voice, word-timed captions</a><a href="#12-sound-that-lands" style="padding-left:12px">12. Sound that lands</a><a href="#part-7-the-review-loop">Part 7 - The review loop</a><a href="#13-make-the-frames-come-to-you" style="padding-left:12px">13. Make the frames come to you</a><a href="#part-8-your-first-episode">Part 8 - Your first episode</a><a href="#part-9-stay-on-the-right-side-of-the-platform">Part 9 - Stay on the right side of the platform</a><a href="#repos-to-clone">Repos to clone</a><a href="#the-real-shift">The real shift</a></aside></div>
+<div class="foot">All archived content © its original authors. Captured from X for personal reference.</div>
+<script>
+document.querySelectorAll('pre').forEach(pre=>{const b=document.createElement('button');b.className='copy';b.textContent='Copy';
+b.onclick=()=>{navigator.clipboard.writeText(pre.innerText.replace(/^Copy\n?/,'')).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1400)})};pre.prepend(b)});
+</script></body></html>

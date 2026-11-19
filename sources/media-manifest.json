@@ -1,0 +1,278 @@
+{
+  "note": "Every media file in the hub. On push, the fetch-media workflow downloads each into docs/media/ (original URL first, Apify mirror second), rewrites links to local copies and rebuilds the site. To add media for a new entry, append rows here.",
+  "cdn_base": "https://raw.githack.com/HossamSalemOnline/Opus-5.5/main/",
+  "apify_mirrors": [
+    {
+      "store_id": "V4UvkeQKrQxGrDp15",
+      "captured": "2026-11-19",
+      "entries": [
+        "e001",
+        "e002"
+      ],
+      "retention": "7 days (until about 26 Nov 2026)"
+    }
+  ],
+  "files": [
+    {
+      "path": "docs/media/e001-editing-desk.mp4",
+      "original": "https://video.twimg.com/amplify_video/2123129525605179392/vid/avc1/1440x1800/KNdLS1eQm-9fwa1r.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000000-KNdLS1eQm-9fwa1r.mp4?signature=lMLCZLJJCt2v5Bj0VWlZ",
+      "bytes": 9966021,
+      "kind": "video",
+      "entry": "e001",
+      "title": "13-repo editing desk",
+      "poster": "docs/media/e001-editing-desk-poster.jpg"
+    },
+    {
+      "path": "docs/media/e001-editing-desk-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2123129525605179392/img/ctXCc1OJ-XqPXBNa.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000001-ctXCc1OJ-XqPXBNa.jpg?signature=1KLWmF1s0YEaUgu1dZv0n",
+      "bytes": 111165,
+      "kind": "poster",
+      "entry": "e001"
+    },
+    {
+      "path": "docs/media/e002-cover.jpg",
+      "original": "https://pbs.twimg.com/media/HVqS0I5XsAEvuDf.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000002-HVqS0I5XsAEvuDf.jpg?signature=14D9TfQzBg1UB0MtsXUc2",
+      "bytes": 92182,
+      "kind": "image",
+      "entry": "e002",
+      "title": "Course cover"
+    },
+    {
+      "path": "docs/media/e002-v1-bronze-jar-short.mp4",
+      "original": "https://video.twimg.com/amplify_video/2115149518282821632/vid/avc1/1080x1920/y05BqJUEVG2PSWrY.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000003-y05BqJUEVG2PSWrY.mp4?signature=1s2hVKB2zk7CwTKAOxhMx",
+      "bytes": 54695258,
+      "kind": "video",
+      "entry": "e002",
+      "title": "The 27M-view bronze jar short",
+      "poster": "docs/media/e002-v1-poster.jpg"
+    },
+    {
+      "path": "docs/media/e002-v1-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2115149518282821632/img/iQu1t5BzdEJIq-ol.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000004-iQu1t5BzdEJIq-ol.jpg?signature=BojrsiO1BVK8VsO6rTBd",
+      "bytes": 98752,
+      "kind": "poster",
+      "entry": "e002"
+    },
+    {
+      "path": "docs/media/e002-v2-part1.mp4",
+      "original": "https://video.twimg.com/amplify_video/2115157446935117824/vid/avc1/1280x720/5X9WcWVfasRvvohO.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000005-5X9WcWVfasRvvohO.mp4?signature=1AH83TzQtOaG6GGR04mDU",
+      "bytes": 388874,
+      "kind": "video",
+      "entry": "e002",
+      "title": "Part 1 title card",
+      "poster": "docs/media/e002-v2-poster.jpg"
+    },
+    {
+      "path": "docs/media/e002-v2-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2115157446935117824/img/3c1GxgjVZsnxKGZ6.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000006-3c1GxgjVZsnxKGZ6.jpg?signature=iRWqGsMDsR5MC8OcFxVj",
+      "bytes": 78809,
+      "kind": "poster",
+      "entry": "e002"
+    },
+    {
+      "path": "docs/media/e002-v3-part3.mp4",
+      "original": "https://video.twimg.com/amplify_video/2115157667047956481/vid/avc1/1280x720/NmUGiq51gkw0WLjq.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000007-NmUGiq51gkw0WLjq.mp4?signature=BW6aNbUFazAMRmlE8t80",
+      "bytes": 220580,
+      "kind": "video",
+      "entry": "e002",
+      "title": "Part 3 title card",
+      "poster": "docs/media/e002-v3-poster.jpg"
+    },
+    {
+      "path": "docs/media/e002-v3-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2115157667047956481/img/dU2jZZlWUgGOY4OJ.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000008-dU2jZZlWUgGOY4OJ.jpg?signature=172G4kcbTGGsdkwlYqmSt",
+      "bytes": 53875,
+      "kind": "poster",
+      "entry": "e002"
+    },
+    {
+      "path": "docs/media/e002-v4-part4.mp4",
+      "original": "https://video.twimg.com/amplify_video/2115157777257574400/vid/avc1/1278x720/7Web--w6XpX-1grF.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000009-7Web--w6XpX-1grF.mp4?signature=1Hvr5fqHJobXNjbTg3zng",
+      "bytes": 374298,
+      "kind": "video",
+      "entry": "e002",
+      "title": "Part 4 title card",
+      "poster": "docs/media/e002-v4-poster.jpg"
+    },
+    {
+      "path": "docs/media/e002-v4-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2115157777257574400/img/82DrdaJOElyNugCv.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000010-82DrdaJOElyNugCv.jpg?signature=1OaXq8wsKxoaj00FWNYFS",
+      "bytes": 75445,
+      "kind": "poster",
+      "entry": "e002"
+    },
+    {
+      "path": "docs/media/e002-v5-part5.mp4",
+      "original": "https://video.twimg.com/amplify_video/2115157888607846400/vid/avc1/1280x720/p4wUbnmXZctR6rBA.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000011-p4wUbnmXZctR6rBA.mp4?signature=RKbxe0aZLdx8oW2iUfLF",
+      "bytes": 503468,
+      "kind": "video",
+      "entry": "e002",
+      "title": "Part 5 title card",
+      "poster": "docs/media/e002-v5-poster.jpg"
+    },
+    {
+      "path": "docs/media/e002-v5-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2115157888607846400/img/alUfvNO6dKSYCP4F.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000012-alUfvNO6dKSYCP4F.jpg?signature=3KlJj5SVGvR1WK7XEtAU",
+      "bytes": 68509,
+      "kind": "poster",
+      "entry": "e002"
+    },
+    {
+      "path": "docs/media/e002-v6-part6.mp4",
+      "original": "https://video.twimg.com/amplify_video/2115157994392494080/vid/avc1/1280x720/5hGbR5FwhvzHzMDW.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000013-5hGbR5FwhvzHzMDW.mp4?signature=1QGTOA80xDzd0zWLyU9lv",
+      "bytes": 427839,
+      "kind": "video",
+      "entry": "e002",
+      "title": "Part 6 title card",
+      "poster": "docs/media/e002-v6-poster.jpg"
+    },
+    {
+      "path": "docs/media/e002-v6-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2115157994392494080/img/XFc5H0YOS-uVTmyM.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000014-XFc5H0YOS-uVTmyM.jpg?signature=ZVvx9uwz3qBYnIoVcWbv",
+      "bytes": 73900,
+      "kind": "poster",
+      "entry": "e002"
+    },
+    {
+      "path": "docs/media/e002-v7-part7.mp4",
+      "original": "https://video.twimg.com/amplify_video/2115158357212352512/vid/avc1/1280x720/Zfc564KE3yOrbHyu.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000015-Zfc564KE3yOrbHyu.mp4?signature=3bVMSkGCyApbcXIQELjn",
+      "bytes": 244129,
+      "kind": "video",
+      "entry": "e002",
+      "title": "Part 7 title card",
+      "poster": "docs/media/e002-v7-poster.jpg"
+    },
+    {
+      "path": "docs/media/e002-v7-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2115158357212352512/img/esrpi3M9rY9wkCkH.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000016-esrpi3M9rY9wkCkH.jpg?signature=oaFM411UndD2kkzQhKgT",
+      "bytes": 112425,
+      "kind": "poster",
+      "entry": "e002"
+    },
+    {
+      "path": "docs/media/e002-img1-anatomy.jpg",
+      "original": "https://pbs.twimg.com/media/HVqP9vpWoAASYpr.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000017-HVqP9vpWoAASYpr.jpg?signature=1Ku55UxbnjPqO3zNyW0Bs",
+      "bytes": 46541,
+      "kind": "image",
+      "entry": "e002",
+      "title": "Anatomy of the short"
+    },
+    {
+      "path": "docs/media/e002-img2-studio-setup.jpg",
+      "original": "https://pbs.twimg.com/media/HVqQTumX0AAqN6Q.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000018-HVqQTumX0AAqN6Q.jpg?signature=1KU0FgjwFFhyCRPhzCmTR",
+      "bytes": 42580,
+      "kind": "image",
+      "entry": "e002",
+      "title": "Studio setup"
+    },
+    {
+      "path": "docs/media/e002-img3-script.jpg",
+      "original": "https://pbs.twimg.com/media/HVqQf3zW8AAmd78.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000019-HVqQf3zW8AAmd78.jpg?signature=DgCBV7y3VI0NkJbhKa7U",
+      "bytes": 45239,
+      "kind": "image",
+      "entry": "e002",
+      "title": "Script"
+    },
+    {
+      "path": "docs/media/e002-img4-set-passes.jpg",
+      "original": "https://pbs.twimg.com/media/HVqQrXwXQAAwKkw.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000020-HVqQrXwXQAAwKkw.jpg?signature=VP4YogrOvS4ua7ckQKmE",
+      "bytes": 55749,
+      "kind": "image",
+      "entry": "e002",
+      "title": "Set passes"
+    },
+    {
+      "path": "docs/media/e002-img5-cutout-rig.jpg",
+      "original": "https://pbs.twimg.com/media/HVqRUHlXEAAijqn.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000021-HVqRUHlXEAAijqn.jpg?signature=1uwaTrd5MxYxTKQISapyH",
+      "bytes": 62699,
+      "kind": "image",
+      "entry": "e002",
+      "title": "Cut-out rig"
+    },
+    {
+      "path": "docs/media/e002-img6-captions.png",
+      "original": "https://pbs.twimg.com/media/HVqReagW0AAgk5j.png",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000022-HVqReagW0AAgk5j.png?signature=1x5rW4ggWlou268WI2jmH",
+      "bytes": 110916,
+      "kind": "image",
+      "entry": "e002",
+      "title": "Word-timed captions"
+    },
+    {
+      "path": "docs/media/e002-img7-contact-sheet.jpg",
+      "original": "https://pbs.twimg.com/media/HVqRte2XwAA4GTj.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000023-HVqRte2XwAA4GTj.jpg?signature=1RTXHdV0k3iacLHOtBYqP",
+      "bytes": 69916,
+      "kind": "image",
+      "entry": "e002",
+      "title": "Contact sheet"
+    },
+    {
+      "path": "docs/media/e002-img8-revision.jpg",
+      "original": "https://pbs.twimg.com/media/HVqSFEPXQAA1Yqq.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000024-HVqSFEPXQAA1Yqq.jpg?signature=tcjbMbn36MLer1vIiPlq",
+      "bytes": 69916,
+      "kind": "image",
+      "entry": "e002",
+      "title": "Scoped revision"
+    },
+    {
+      "path": "docs/media/ref-claude-opus-5.5-launch.mp4",
+      "original": "https://video.twimg.com/amplify_video/2102432417352929280/vid/avc1/1920x1080/yilx3O9YWu7w9vaX.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000025-yilx3O9YWu7w9vaX.mp4?signature=1M48BpDATX8y1ypWKYfaG",
+      "bytes": 13134325,
+      "kind": "video",
+      "entry": "e002",
+      "title": "Claude Opus 5.5 launch",
+      "poster": "docs/media/ref-claude-opus-5.5-launch-poster.jpg"
+    },
+    {
+      "path": "docs/media/ref-claude-opus-5.5-launch-poster.jpg",
+      "original": "https://pbs.twimg.com/media/HS1aPgYWMAAP9sw.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000026-HS1aPgYWMAAP9sw.jpg?signature=1jC9U27KBCiiza7V5SQME",
+      "bytes": 167995,
+      "kind": "poster",
+      "entry": "e002"
+    },
+    {
+      "path": "docs/media/ref-alexalbert-blender-claymation.mp4",
+      "original": "https://video.twimg.com/amplify_video/2102457816820916224/vid/avc1/1612x1080/pdOJXL6ne_LOROg3.mp4?tag=29",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000027-pdOJXL6ne_LOROg3.mp4?signature=Y2SfzzhsTPE8gVpoXvQZ",
+      "bytes": 2831139,
+      "kind": "video",
+      "entry": "e002",
+      "title": "Blender claymation from one prompt",
+      "poster": "docs/media/ref-alexalbert-blender-claymation-poster.jpg"
+    },
+    {
+      "path": "docs/media/ref-alexalbert-blender-claymation-poster.jpg",
+      "original": "https://pbs.twimg.com/amplify_video_thumb/2102457816820916224/img/UNnuG_dYWVbvKNZu.jpg",
+      "mirror": "https://api.apify.com/v2/key-value-stores/V4UvkeQKrQxGrDp15/records/files-000028-UNnuG_dYWVbvKNZu.jpg?signature=6IBn1HcOmnmsedxiB2A8",
+      "bytes": 96832,
+      "kind": "poster",
+      "entry": "e002"
+    }
+  ]
+}
