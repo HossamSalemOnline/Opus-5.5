@@ -124,9 +124,10 @@ def by_path(path):
 
 
 def shell(title, active, body):
-    nav = [("index.html", "Home")] + [(page_name(e), e["kind"] + " · " + e["title"][:28] + ("…" if len(e["title"]) > 28 else "")) for e in ENTRIES]
+    nav = [("index.html", "Home")] + [(page_name(e), e["id"].upper()) for e in sorted(ENTRIES, key=lambda x: x["id"])]
     nav += [("repos.html", "All repos"), ("sources.html", "Sources")]
-    links = "".join(f'<a class="l{" on" if active == href else ""}" href="{href}">{html.escape(label)}</a>' for href, label in nav)
+    titles = {page_name(e): e["title"] for e in ENTRIES}
+    links = "".join(f'<a class="l{" on" if active == href else ""}" href="{href}" title="{html.escape(titles.get(href, label))}">{html.escape(label)}</a>' for href, label in nav)
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><meta name="robots" content="noindex">{FONTS}<style>{CSS}</style></head><body>
 <nav class="nav"><div class="in"><a class="brand" href="index.html">Opus <b>5.5</b> Knowledge Hub</a><span class="sp"></span>{links}</div></nav>
